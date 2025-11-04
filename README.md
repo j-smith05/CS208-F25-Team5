@@ -1,15 +1,15 @@
-## Team Name: TBD
+## Team Name: Team Alex Trebek
 
-## Project Name: TBD
+## Project Name: Triva Game (aka Jeopardy)
 
 ## Project Description:
-TBD
+Creating a Jeopardy Game, 
 
 ## Team Members:
 
 | Last Name          | First Name         | GitHub Username    |
 |--------------------|--------------------|--------------------|
-| TBD                | TBD                | TBD                |
+| Smith              | Jacob              | j-smith05          |
 | TBD                | TBD                | TBD                |
 | TBD                | TBD                | TBD                |
 | TBD                | TBD                | TBD                |
