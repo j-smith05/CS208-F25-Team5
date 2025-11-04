@@ -10,7 +10,7 @@ Creating a Jeopardy Game,
 | Last Name          | First Name         | GitHub Username    |
 |--------------------|--------------------|--------------------|
 | Smith              | Jacob              | j-smith05          |
-| TBD                | TBD                | TBD                |
+| Fowers             | Troy               | TroyF30            |
 | TBD                | TBD                | TBD                |
 | TBD                | TBD                | TBD                |
 | TBD                | TBD                | TBD                |
