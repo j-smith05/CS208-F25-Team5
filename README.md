@@ -13,8 +13,8 @@ Creating a Jeopardy Game,
 | Fowers             | Troy               | TroyF30            |
 | Ovechka            | Reagan             | reaganovechka      |
 | McKee              | Calvin             | Boo2242            |
-| TBD                | TBD                | TBD                |
-| TBD                | TBD                | TBD                |
+| Barkley            | Taylor             | TBD                |
+| Albanna            | Jade               | TBD                |
 
 
 ## :eyes: :memo: Scrum Linter Reports:
