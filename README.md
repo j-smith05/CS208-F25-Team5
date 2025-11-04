@@ -12,7 +12,7 @@ Creating a Jeopardy Game,
 | Smith              | Jacob              | j-smith05          |
 | Fowers             | Troy               | TroyF30            |
 | TBD                | TBD                | TBD                |
-| TBD                | TBD                | TBD                |
+| McKee              | Calvin             | Boo2242            |
 | TBD                | TBD                | TBD                |
 | TBD                | TBD                | TBD                |
 
