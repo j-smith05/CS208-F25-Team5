@@ -11,7 +11,7 @@ Creating a Jeopardy Game,
 |--------------------|--------------------|--------------------|
 | Smith              | Jacob              | j-smith05          |
 | Fowers             | Troy               | TroyF30            |
-| Reagan             | Ovechka            | reaganovechka      |
+| Ovechka            | Reagan             | reaganovechka      |
 | McKee              | Calvin             | Boo2242            |
 | TBD                | TBD                | TBD                |
 | TBD                | TBD                | TBD                |
