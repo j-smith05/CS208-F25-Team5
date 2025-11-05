@@ -13,7 +13,7 @@ Creating a Jeopardy Game,
 | Fowers             | Troy               | TroyF30            |
 | Ovechka            | Reagan             | reaganovechka      |
 | McKee              | Calvin             | Boo2242            |
-| Barkley            | Taylor             | TBD                |
+| Barkley            | Taylor             | TaylorBarkley173   |
 | Albanna            | Jade               | TBD                |
 
 
