@@ -6,3 +6,50 @@ Absolutely, the team can create as many .css files as needed.
 body {
     font: normal 30px Verdana, Arial, sans-serif;
 }
+/* Basic table styling to look like a game board */
+.my-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: sans-serif;
+}
+
+.my-table th {
+    background-color: #060CE9; /* Jeopardy Blue */
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    border: 3px solid #000;
+}
+
+.my-table td {
+    background-color: #060CE9; /* Jeopardy Blue */
+    color: #FFCC00; /* Yellow point values */
+    text-align: center;
+    vertical-align: middle;
+    height: 120px;
+    font-size: 48px;
+    font-weight: bold;
+    cursor: pointer; /* Indicates it's clickable */
+    border: 3px solid #000;
+    transition: background-color 0.5s;
+}
+
+/* Style for the used cell */
+.my-table td.used {
+    background-color: #222; /* Darker gray when used */
+    color: #444; /* Faded point value */
+    pointer-events: none; /* Prevents further clicks */
+    cursor: default;
+}
+
+/* Styling for the clue text */
+.clue-content {
+    font-size: 24px;
+    color: white;
+    padding: 10px;
+}
+
+/* Styles for hiding and showing content */
+.hidden {
+    display: none;
+}
