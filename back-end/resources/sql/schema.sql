@@ -6,8 +6,12 @@
 
 DROP TABLE IF EXISTS samples;
 
-CREATE TABLE samples
+CREATE TABLE jeopardy
 (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
-    tbd         VARCHAR(20)
+    categories         VARCHAR(20),
+    questions VARCHAR(100),
+    answers VARCHAR(100),
+    points int
+
 );
