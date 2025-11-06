@@ -4,6 +4,7 @@ const sqlite3 = require('sqlite3').verbose();
 
 // TODO: create a SQLite data source in IntelliJ with the name: "./back-end/cs208_project.sqlite"
 
+
 // Do not change this name. The 'cs208_project.sqlite' will be created in the same folder as db.js
 const SQLITE_FILE_NAME = "cs208_project.sqlite";
 
