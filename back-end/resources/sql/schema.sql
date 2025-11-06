@@ -8,10 +8,10 @@ DROP TABLE IF EXISTS samples;
 
 CREATE TABLE jeopardy
 (
-    id          INTEGER PRIMARY KEY AUTOINCREMENT,
-    categories         VARCHAR(20),
-    questions VARCHAR(100),
-    answers VARCHAR(100),
-    points int
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    categories VARCHAR(20),
+    questions  VARCHAR(100),
+    answers    VARCHAR(100),
+    points     INTEGER
 
 );
