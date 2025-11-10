@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Jeopardy Game Board</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jeopardy Game</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-<header>
-    <h1>Jeopardy Game Board</h1>
-</header>
 
+<body>
 <!-- Scoreboard -->
-<section class="scoreboard">
+<div class="scoreboard">
     <div class="player-score">
         <label for="player1-score">Player 1 Score:</label>
         <span id="player1-score">0</span>
@@ -22,11 +19,11 @@
         <label for="player2-score">Player 2 Score:</label>
         <span id="player2-score">0</span>
     </div>
-</section>
+</div>
 
 <!-- Game Board -->
-<section class="table-container">
-    <table class="game-board">
+<div class="table-container">
+    <table class="my-table">
         <thead>
         <tr>
             <th>Sports</th>
@@ -39,58 +36,61 @@
         <tbody>
         <tr>
             <td data-category="Sports" data-points="200">
-                <button class="tile">200</button>
+                <div class="clue-points">200</div>
                 <div class="clue-content hidden">
                     <p class="clue-question">This is the clue the players see.</p>
                     <p class="clue-answer hidden">What is the correct response?</p>
                 </div>
             </td>
             <td data-category="Music" data-points="200">
-                <button class="tile">200</button>
+                <div class="clue-points">200</div>
                 <div class="clue-content hidden">
                     <p class="clue-question">He was known as the "King of Pop."</p>
                     <p class="clue-answer hidden">Who is Michael Jackson?</p>
                 </div>
             </td>
-            <td><button class="tile">200</button></td>
-            <td><button class="tile">200</button></td>
-            <td><button class="tile">200</button></td>
+            <td data-category="History" data-points="200">
+                <div class="clue-points">200</div>
+                <div class="clue-content hidden">
+                    <p class="clue-question">Who was the first President of the United States?</p>
+                    <p class="clue-answer hidden">Who is George Washington?</p>
+                </div>
+            </td>
+            <td data-category="Quotes" data-points="200">
+                <div class="clue-points">200</div>
+                <div class="clue-content hidden">
+                    <p class="clue-question">"The only thing we have to fear is fear itself" — who said this?</p>
+                    <p class="clue-answer hidden">Who is Franklin D. Roosevelt?</p>
+                </div>
+            </td>
+            <td data-category="Misc." data-points="200">
+                <div class="clue-points">200</div>
+                <div class="clue-content hidden">
+                    <p class="clue-question">What color do you get when you mix red and blue?</p>
+                    <p class="clue-answer hidden">What is purple?</p>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Remaining rows just use placeholder values -->
+        <tr>
+            <td>400</td><td>400</td><td>400</td><td>400</td><td>400</td>
         </tr>
         <tr>
-            <td><button class="tile">400</button></td>
-            <td><button class="tile">400</button></td>
-            <td><button class="tile">400</button></td>
-            <td><button class="tile">400</button></td>
-            <td><button class="tile">400</button></td>
+            <td>600</td><td>600</td><td>600</td><td>600</td><td>600</td>
         </tr>
         <tr>
-            <td><button class="tile">600</button></td>
-            <td><button class="tile">600</button></td>
-            <td><button class="tile">600</button></td>
-            <td><button class="tile">600</button></td>
-            <td><button class="tile">600</button></td>
+            <td>800</td><td>800</td><td>800</td><td>800</td><td>800</td>
         </tr>
         <tr>
-            <td><button class="tile">800</button></td>
-            <td><button class="tile">800</button></td>
-            <td><button class="tile">800</button></td>
-            <td><button class="tile">800</button></td>
-            <td><button class="tile">800</button></td>
-        </tr>
-        <tr>
-            <td><button class="tile">1000</button></td>
-            <td><button class="tile">1000</button></td>
-            <td><button class="tile">1000</button></td>
-            <td><button class="tile">1000</button></td>
-            <td><button class="tile">1000</button></td>
+            <td>1000</td><td>1000</td><td>1000</td><td>1000</td><td>1000</td>
         </tr>
         </tbody>
     </table>
-</section>
+</div>
 
-<footer>
-    <p><a href="index.html">Back to index</a></p>
-</footer>
+<p><a href="index.html">Back to index</a></p>
+<hr>
 
 <script src="js/sample.js"></script>
 </body>
