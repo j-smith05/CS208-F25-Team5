@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sample</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Jeopardy Game Board</title>
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
-
 <body>
-<div class="scoreboard">
+<header>
+    <h1>Jeopardy Game Board</h1>
+</header>
+
+<!-- Scoreboard -->
+<section class="scoreboard">
     <div class="player-score">
         <label for="player1-score">Player 1 Score:</label>
         <span id="player1-score">0</span>
     </div>
     <div class="player-score">
-        <label for="player1-score">Player 2 Score:</label>
+        <label for="player2-score">Player 2 Score:</label>
         <span id="player2-score">0</span>
     </div>
-</div>
-<div class="table-container">
-    <table class = "my-table">
+</section>
+
+<!-- Game Board -->
+<section class="table-container">
+    <table class="game-board">
         <thead>
         <tr>
             <th>Sports</th>
@@ -34,59 +39,59 @@
         <tbody>
         <tr>
             <td data-category="Sports" data-points="200">
-                <div class="clue-points">200</div>
+                <button class="tile">200</button>
                 <div class="clue-content hidden">
                     <p class="clue-question">This is the clue the players see.</p>
                     <p class="clue-answer hidden">What is the correct response?</p>
                 </div>
             </td>
-            <td data-points="200" data-category="Music">
-                <div class="clue-points">200</div>
+            <td data-category="Music" data-points="200">
+                <button class="tile">200</button>
                 <div class="clue-content hidden">
                     <p class="clue-question">He was known as the "King of Pop."</p>
                     <p class="clue-answer hidden">Who is Michael Jackson?</p>
                 </div>
             </td>
-            <td>200</td>
-            <td>200</td>
-            <td>200</td>
+            <td><button class="tile">200</button></td>
+            <td><button class="tile">200</button></td>
+            <td><button class="tile">200</button></td>
         </tr>
         <tr>
-            <td>400</td>
-            <td>400</td>
-            <td>400</td>
-            <td>400</td>
-            <td>400</td>
+            <td><button class="tile">400</button></td>
+            <td><button class="tile">400</button></td>
+            <td><button class="tile">400</button></td>
+            <td><button class="tile">400</button></td>
+            <td><button class="tile">400</button></td>
         </tr>
         <tr>
-            <td>600</td>
-            <td>600</td>
-            <td>600</td>
-            <td>600</td>
-            <td>600</td>
+            <td><button class="tile">600</button></td>
+            <td><button class="tile">600</button></td>
+            <td><button class="tile">600</button></td>
+            <td><button class="tile">600</button></td>
+            <td><button class="tile">600</button></td>
         </tr>
         <tr>
-            <td>800</td>
-            <td>800</td>
-            <td>800</td>
-            <td>800</td>
-            <td>800</td>
+            <td><button class="tile">800</button></td>
+            <td><button class="tile">800</button></td>
+            <td><button class="tile">800</button></td>
+            <td><button class="tile">800</button></td>
+            <td><button class="tile">800</button></td>
         </tr>
         <tr>
-            <td>1000</td>
-            <td>1000</td>
-            <td>1000</td>
-            <td>1000</td>
-            <td>1000</td>
+            <td><button class="tile">1000</button></td>
+            <td><button class="tile">1000</button></td>
+            <td><button class="tile">1000</button></td>
+            <td><button class="tile">1000</button></td>
+            <td><button class="tile">1000</button></td>
         </tr>
         </tbody>
     </table>
-</div>
+</section>
+
+<footer>
     <p><a href="index.html">Back to index</a></p>
+</footer>
 
-    <hr>
-
-    <script src="js/sample.js"></script>
+<script src="js/sample.js"></script>
 </body>
-
 </html>
