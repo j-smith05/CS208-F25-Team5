@@ -14,7 +14,7 @@ Creating a Jeopardy Game,
 | Ovechka            | Reagan             | reaganovechka      |
 | McKee              | Calvin             | Boo2242            |
 | Barkley            | Taylor             | TaylorBarkley173   |
-| Albanna            | Jade               | TBD                |
+| TBD                | TBD                | TBD                |
 
 
 ## :eyes: :memo: Scrum Linter Reports:
