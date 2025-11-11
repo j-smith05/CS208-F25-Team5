@@ -3,7 +3,7 @@
 
 
 -- TODO: Insert some sample rows to populate the tables
-INSERT INTO samples(id, tbd)
+INSERT INTO jeopardy(id, categories, questions, answers, points)
 VALUES
     (1, 'value1'),
     (2, 'value2'),
