@@ -117,6 +117,7 @@ function getAllSamples()
     });
 }
 
+//I added getPoints, getQuestions, getAnswers and getCategories but my original commit didn't get that so I'm commiting here
 function getPoints(questionID)
 {
     return new Promise(function (resolve, reject) {
