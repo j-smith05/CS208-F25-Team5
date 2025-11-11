@@ -1,7 +1,12 @@
+/*
+Q: Can we create additional .css files in this folder?
+Absolutely, the team can create as many .css files as needed.
+*/
+
 body {
     font: normal 30px Verdana, Arial, sans-serif;
 }
-
+/* Basic table styling to look like a game board */
 .my-table {
     width: 100%;
     border-collapse: collapse;
@@ -9,7 +14,7 @@ body {
 }
 
 .my-table th {
-    background-color: #060CE9;
+    background-color: #060CE9; /* Jeopardy Blue */
     color: white;
     font-size: 24px;
     padding: 10px;
@@ -17,107 +22,34 @@ body {
 }
 
 .my-table td {
-    background-color: #060CE9;
-    color: #FFCC00;
+    background-color: #060CE9; /* Jeopardy Blue */
+    color: #FFCC00; /* Yellow point values */
     text-align: center;
     vertical-align: middle;
     height: 120px;
     font-size: 48px;
     font-weight: bold;
-    cursor: pointer;
+    cursor: pointer; /* Indicates it's clickable */
     border: 3px solid #000;
     transition: background-color 0.5s;
 }
 
-.my-table td:hover {
-    background-color: #1a28ff;
-    transform: scale(1.05);
-}
-
+/* Style for the used cell */
 .my-table td.used {
-    background-color: #222;
-    color: #444;
-    pointer-events: none;
+    background-color: #222; /* Darker gray when used */
+    color: #444; /* Faded point value */
+    pointer-events: none; /* Prevents further clicks */
     cursor: default;
 }
 
+/* Styling for the clue text */
 .clue-content {
     font-size: 24px;
     color: white;
     padding: 10px;
 }
 
+/* Styles for hiding and showing content */
 .hidden {
     display: none;
-}
-
-.scoreboard {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #333;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    color: white;
-}
-
-.player-score {
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.player-score span {
-    display: block;
-    font-size: 36px;
-    color: #FFCC00;
-}
-
-#score-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.popup-content {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    color: #333;
-    width: 90%;
-    max-width: 500px;
-}
-
-.button-group button {
-    margin: 5px;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-}
-
-#correct-p1-btn, #correct-p2-btn {
-    background-color: #4CAF50;
-    color: white;
-}
-
-#incorrect-p1-btn, #incorrect-p2-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#clear-question-btn {
-    background-color: #ccc;
-    color: #333;
-    margin-top: 15px;
 }
