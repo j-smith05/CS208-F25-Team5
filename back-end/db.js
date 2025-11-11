@@ -117,6 +117,122 @@ function getAllSamples()
     });
 }
 
+function getPoints(questionID)
+{
+    return new Promise(function (resolve, reject) {
+        if (typeof questionID !== 'number' || isNaN(questionID)){
+            return reject(new Error("Invalid question number provided"))
+        }
+        db.serialize(function() {
+            const sql =
+                `select points
+                from jeopardy
+                where id = ?`;
+
+            db.get(sql, [questionID], function (err, row) {
+                if (err) {
+                    return reject(err);
+                }
+
+                if (!row) {
+                    return resolve(null);
+                }
+
+                const points = row.points;
+
+                resolve(points);
+            });
+        });
+    });
+}
+
+function getQuestion(questionID)
+{
+    return new Promise(function (resolve, reject) {
+        if (typeof questionID !== 'number' || isNaN(questionID)){
+            return reject(new Error("Invalid question number provided"))
+        }
+        db.serialize(function() {
+            const sql =
+                `select questions
+                from jeopardy
+                where id = ?`;
+
+            db.get(sql, [questionID], function (err, row) {
+                if (err) {
+                    return reject(err);
+                }
+
+                if (!row) {
+                    return resolve(null);
+                }
+
+                const question = row.questions;
+
+                resolve(question);
+            });
+        });
+    });
+}
+
+function getAnswer(questionID)
+{
+    return new Promise(function (resolve, reject) {
+        if (typeof questionID !== 'number' || isNaN(questionID)){
+            return reject(new Error("Invalid question number provided"))
+        }
+        db.serialize(function() {
+            const sql =
+                `select answers
+                from jeopardy
+                where id = ?`;
+
+            db.get(sql, [questionID], function (err, row) {
+                if (err) {
+                    return reject(err);
+                }
+
+                if (!row) {
+                    return resolve(null);
+                }
+
+                const answer = row.answers;
+
+                resolve(answer);
+            });
+        });
+    });
+}
+
+function getCategory(questionID)
+{
+    return new Promise(function (resolve, reject) {
+        if (typeof questionID !== 'number' || isNaN(questionID)){
+            return reject(new Error("Invalid question number provided"))
+        }
+        db.serialize(function() {
+            const sql =
+                `select categories
+                from jeopardy
+                where id = ?`;
+
+            db.get(sql, [questionID], function (err, row) {
+                if (err) {
+                    return reject(err);
+                }
+
+                if (!row) {
+                    return resolve(null);
+                }
+
+                const category = row.categories;
+
+                resolve(category);
+            });
+        });
+    });
+}
+
 
 
 function printTableHeader(listOfColumnNames)
@@ -131,8 +247,14 @@ function printTableHeader(listOfColumnNames)
 }
 
 
+
+
 // TODO: export the functions that will be used in other files
 // these functions will be available from other files that import this module
 module.exports = {
     getAllSamples,
+    getPoints,
+    getQuestion,
+    getAnswer,
+    getCategory
 };
