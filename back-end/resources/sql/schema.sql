@@ -2,7 +2,6 @@
 -- to create the tables or to "reset" the database to the expected structure
 
 
--- TODO: add your tables structure
 
 DROP TABLE IF EXISTS samples;
 
