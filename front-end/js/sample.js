@@ -1,3 +1,5 @@
+import {getQuestion} from "../../back-end/db";
+
 console.log('sample.js is executing...');
 
 let team1Score = 0;
@@ -6,46 +8,37 @@ let team2Score = 0;
 function updateScores() {
     document.getElementById('team1-score').textContent = team1Score;
     document.getElementById('team2-score').textContent = team2Score;
-
 }
+// Load clues onto the board
+async function loadCluesOnBoard() {
+    try {
+        const allClues = await getQuestion();
+        const clueCells = document.querySelectorAll('.my-table td');
 
-async function resetBoard() {
-    console.log("Resetting board...");
+        clueCells.forEach(cell => {
+            const category = cell.dataset.category;
+            const points = parseInt(cell.dataset.points);
+            const clue = allClues.find(c => c.category === category && c.points === points);
 
-    const clueCells = document.querySelectorAll('.my-table td');
-
-    // Clear tile visual state
-    clueCells.forEach(cell => {
-        cell.classList.remove('used');
-        cell.style.backgroundColor = '';
-
-        const pointsDisplay = cell.querySelector('.clue-points');
-        const clueContent = cell.querySelector('.clue-content');
-        const clueAnswer = cell.querySelector('.clue-answer');
-
-        // Reset elements
-        pointsDisplay.classList.remove('hidden');
-        clueContent.classList.add('hidden');
-        clueAnswer.classList.add('hidden');
-    });
-
-    team1Score = 0;
-    team2Score = 0;
-    updateScores();
-
-    // Get fresh data from backend
-    await loadQuestionsIntoBoard();
-
-    console.log("Board reset complete.");
+            if (clue) {
+                const questionElement = cell.querySelector('.clue-question');
+                const answerElement = cell.querySelector('.clue-answer');
+                if (questionElement) questionElement.textContent = clue.question;
+                if (answerElement) answerElement.textContent = clue.answer;
+            }
+        });
+    } catch (error) {
+        console.error("Failed to load clues:", error);
+    }
 }
-
 
 // Wait until the document is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
+
+    loadCluesOnBoard();
+
     // Select all table cells that contain point values
     const clueCells = document.querySelectorAll('.my-table td');
-
-    document.getElementById('reset-btn').addEventListener('click', resetBoard);
 
     clueCells.forEach(cell => {
         cell.addEventListener('click', () => {
