@@ -1,5 +1,14 @@
 console.log('sample.js is executing...');
 
+let team1Score = 0;
+let team2Score = 0;
+
+function updateScores() {
+    document.getElementById('team1-score').textContent = team1Score;
+    document.getElementById('team2-score').textContent = team2Score;
+}
+
+
 // Wait until the document is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Select all table cells that contain point values
@@ -26,7 +35,23 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (clueAnswer && clueAnswer.classList.contains('hidden')) {
                 clueAnswer.classList.remove('hidden');
                 cell.style.backgroundColor = '#FF0000'; // Red for answer reveal
+
+                // --- Ask which team got it right ---
+                const points = parseInt(cell.dataset.points);
+                const winner = prompt(`Who answered correctly? (Enter 1 for Player 1, 2 for Player 2, or leave blank if no one)`);
+
+                if (winner === '1') {
+                    team1Score += points;
+                    alert(`✅ Player 1 gains ${points} points!`);
+                } else if (winner === '2') {
+                    team2Score += points;
+                    alert(`✅ Player 2 gains ${points} points!`);
+                } else {
+                    alert(`❌ No points awarded.`);
+                }
+                updateScores();
             }
+
             // State 3: Mark as used (third click)
             else {
                 cell.classList.add('used');
