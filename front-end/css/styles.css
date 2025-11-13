@@ -53,3 +53,18 @@ body {
 .hidden {
     display: none;
 }
+
+.reset-button {
+    margin: 15px 0;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    background-color: #007FFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    background-color: #005FCC;
+}

@@ -6,6 +6,37 @@ let team2Score = 0;
 function updateScores() {
     document.getElementById('team1-score').textContent = team1Score;
     document.getElementById('team2-score').textContent = team2Score;
+
+}
+
+async function resetBoard() {
+    console.log("Resetting board...");
+
+    const clueCells = document.querySelectorAll('.my-table td');
+
+    // Clear tile visual state
+    clueCells.forEach(cell => {
+        cell.classList.remove('used');
+        cell.style.backgroundColor = '';
+
+        const pointsDisplay = cell.querySelector('.clue-points');
+        const clueContent = cell.querySelector('.clue-content');
+        const clueAnswer = cell.querySelector('.clue-answer');
+
+        // Reset elements
+        pointsDisplay.classList.remove('hidden');
+        clueContent.classList.add('hidden');
+        clueAnswer.classList.add('hidden');
+    });
+
+    team1Score = 0;
+    team2Score = 0;
+    updateScores();
+
+    // Get fresh data from backend
+    await loadQuestionsIntoBoard();
+
+    console.log("Board reset complete.");
 }
 
 
@@ -13,6 +44,8 @@ function updateScores() {
 document.addEventListener('DOMContentLoaded', () => {
     // Select all table cells that contain point values
     const clueCells = document.querySelectorAll('.my-table td');
+
+    document.getElementById('reset-btn').addEventListener('click', resetBoard);
 
     clueCells.forEach(cell => {
         cell.addEventListener('click', () => {
