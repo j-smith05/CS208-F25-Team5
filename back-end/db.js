@@ -121,6 +121,11 @@ function getAllSamples()
 function getQuestionData(questionID, fieldName)
 {
     return new Promise(function (resolve, reject) {
+        const allowedFields = ['points', 'questions', 'answers', 'categories'];
+        if (!allowedFields.includes(fieldName)) {
+            return Promise.reject(new Error(`Invalid field name requested: ${fieldName}`));
+        }
+
         if (typeof questionID !== 'number' || isNaN(questionID)){
             return reject(new Error("Invalid question number provided"))
         }
