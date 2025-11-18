@@ -1,4 +1,3 @@
-import {getQuestion} from "../../back-end/db";
 
 console.log('sample.js is executing...');
 
@@ -12,13 +11,19 @@ function updateScores() {
 // Load clues onto the board
 async function loadCluesOnBoard() {
     try {
-        const allClues = await getQuestion();
+        const response = await fetch("http://localhost:8080/api/jeopardy");
+        const allClues = await response.json();
+        console.log("Loaded clues:", allClues);
+
         const clueCells = document.querySelectorAll('.my-table td');
 
         clueCells.forEach(cell => {
             const category = cell.dataset.category;
             const points = parseInt(cell.dataset.points);
-            const clue = allClues.find(c => c.category === category && c.points === points);
+
+            const clue = allClues.find(c =>
+                c.category === category && c.points === points
+            );
 
             if (clue) {
                 const questionElement = cell.querySelector('.clue-question');
@@ -31,6 +36,7 @@ async function loadCluesOnBoard() {
         console.error("Failed to load clues:", error);
     }
 }
+
 
 // Wait until the document is fully loaded
 document.addEventListener('DOMContentLoaded', () => {

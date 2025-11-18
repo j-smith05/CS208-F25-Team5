@@ -1,7 +1,6 @@
 let express = require('express');
 let router = express.Router();
-const db = require("./../db");
-
+const db = require("../db");
 
 /**
  * http://localhost:8080/samples
@@ -23,6 +22,26 @@ router.get("/samples", async function (req, res)
     {
         console.error("Error:", err.message);
         res.status(500).json({ "error": "Internal Server Error" });
+    }
+});
+
+router.get("/api/jeopardy", async (req, res) => {
+    try {
+        const rows = await db.getAllJeopardyQuestions();
+
+        // Standardize field names to EXACTLY what frontend expects
+        const formatted = rows.map(r => ({
+            category: r.category,     // Disney, Literature, etc.
+            question: r.question,
+            answer: r.answer,
+            points: r.points
+        }));
+
+        res.json(formatted);
+    }
+    catch (err) {
+        console.error("Failed to load jeopardy questions:", err);
+        res.status(500).json({ error: "Failed to load jeopardy questions" });
     }
 });
 

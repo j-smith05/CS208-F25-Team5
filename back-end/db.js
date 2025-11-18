@@ -234,6 +234,39 @@ function getCategory(questionID)
     });
 }
 
+function getAllJeopardyQuestions() {
+    return new Promise(function(resolve, reject) {
+        db.serialize(function() {
+
+            const sql = `
+                SELECT id, categories, questions, answers, points
+                FROM jeopardy
+                ORDER BY categories, points;
+            `;
+
+            const list = [];
+
+            db.each(
+                sql,
+                function(err, row) {
+                    if (err) return reject(err);
+
+                    list.push({
+                        id: row.id,
+                        category: row.categories,
+                        question: row.questions,
+                        answer: row.answers,
+                        points: row.points
+                    });
+                },
+                function() {
+                    resolve(list);
+                }
+            );
+        });
+    });
+}
+
 
 
 function printTableHeader(listOfColumnNames)
@@ -257,5 +290,6 @@ module.exports = {
     getPoints,
     getQuestion,
     getAnswer,
-    getCategory
+    getCategory,
+    getAllJeopardyQuestions
 };
