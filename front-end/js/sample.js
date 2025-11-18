@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateScores();
             }
 
+
             // State 3: Mark as used (third click)
             else {
                 cell.classList.add('used');
@@ -93,4 +94,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    function resetBoard() {
+        const clueCells = document.querySelectorAll('.my-table td');
+
+        clueCells.forEach(cell => {
+            cell.classList.remove('used');
+            cell.style.backgroundColor = '#001fba';  // Jeopardy blue
+
+            const pointsDisplay = cell.querySelector('.clue-points');
+            const clueContent = cell.querySelector('.clue-content');
+            const clueAnswer = cell.querySelector('.clue-answer');
+
+            if (pointsDisplay) pointsDisplay.classList.remove('hidden');
+            if (clueContent) clueContent.classList.add('hidden');
+            if (clueAnswer) clueAnswer.classList.add('hidden');
+        });
+
+        team1Score = 0;
+        team2Score = 0;
+        updateScores();
+
+        loadCluesOnBoard();
+    }
+
+    document.getElementById('reset-btn').addEventListener('click', resetBoard);
+
 });
