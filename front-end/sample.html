@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jeopardy Game</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
 <!-- Scoreboard -->
 <div class="scoreboard">
@@ -26,203 +24,205 @@
     <table class="my-table">
         <thead>
         <tr>
-            <th>Sports</th>
-            <th>Music</th>
-            <th>History</th>
-            <th>Quotes</th>
-            <th>Misc.</th>
+            <th>Disney</th>
+            <th>Literature</th>
+            <th>Just for fun</th>
+            <th>Animals</th>
+            <th>Random</th>
         </tr>
         </thead>
         <tbody>
+        <!-- 100 points row -->
         <tr>
+            <td data-category="Disney" data-points="100">
+                <div class="clue-points">100</div>
+                <div class="clue-content hidden">
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
+                </div>
+            </td>
+            <td data-category="Literature" data-points="100">
+                <div class="clue-points">100</div>
+                <div class="clue-content hidden">
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
+                </div>
+            </td>
+            <td data-category="Just for fun" data-points="100">
+                <div class="clue-points">100</div>
+                <div class="clue-content hidden">
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
+                </div>
+            </td>
+            <td data-category="Animals" data-points="100">
+                <div class="clue-points">100</div>
+                <div class="clue-content hidden">
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
+                </div>
+            </td>
+            <td data-category="Random" data-points="100">
+                <div class="clue-points">100</div>
+                <div class="clue-content hidden">
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
+                </div>
+            </td>
+        </tr>
+
+        <!-- 200 points row -->
         <tr>
-            <td data-category="Sports" data-points="200">
+            <td data-category="Disney" data-points="200">
                 <div class="clue-points">200</div>
                 <div class="clue-content hidden">
                     <p class="clue-question"></p>
                     <p class="clue-answer hidden"></p>
                 </div>
             </td>
-            <td data-category="Music" data-points="200">
+            <td data-category="Literature" data-points="200">
                 <div class="clue-points">200</div>
                 <div class="clue-content hidden">
-                    <p class="clue-question">He was known as the "King of Pop."</p>
-                    <p class="clue-answer hidden">Who is Michael Jackson?</p>
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
                 </div>
             </td>
-            <td data-category="History" data-points="200">
+            <td data-category="Just for fun" data-points="200">
                 <div class="clue-points">200</div>
                 <div class="clue-content hidden">
-                    <p class="clue-question">Who was the first President of the United States?</p>
-                    <p class="clue-answer hidden">Who is George Washington?</p>
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
                 </div>
             </td>
-            <td data-category="Quotes" data-points="200">
+            <td data-category="Animals" data-points="200">
                 <div class="clue-points">200</div>
                 <div class="clue-content hidden">
-                    <p class="clue-question">"The only thing we have to fear is fear itself" — who said this?</p>
-                    <p class="clue-answer hidden">Who is Franklin D. Roosevelt?</p>
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
                 </div>
             </td>
-            <td data-category="Misc." data-points="200">
+            <td data-category="Random" data-points="200">
                 <div class="clue-points">200</div>
                 <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
                 </div>
             </td>
         </tr>
 
-        <!-- Remaining rows just use placeholder values -->
+        <!-- 300 points row -->
         <tr>
-            <td data-category="Sports" data-points="400">
-                <div class="clue-points">400</div>
+            <td data-category="Disney" data-points="300">
+                <div class="clue-points">300</div>
                 <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
                 </div>
             </td>
-            <td data-category="Music" data-points="400">
-            <div class="clue-points">400</div>
-            <div class="clue-content hidden">
-                <p class="clue-question">What color do you get when you mix red and blue?</p>
-                <p class="clue-answer hidden">What is purple?</p>
-            </div>
-        </td>
-            <td
-                data-category="History" data-points="400">
-            <div class="clue-points">400</div>
-            <div class="clue-content hidden">
-                <p class="clue-question">What color do you get when you mix red and blue?</p>
-                <p class="clue-answer hidden">What is purple?</p>
-            </div>
-            </td>
-            <td data-category="Quotes" data-points="400">
-                <div class="clue-points">400</div>
+            <td data-category="Literature" data-points="300">
+                <div class="clue-points">300</div>
                 <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
                 </div>
             </td>
-            <td data-category="Misc." data-points="400">
-                <div class="clue-points">400</div>
+            <td data-category="Just for fun" data-points="300">
+                <div class="clue-points">300</div>
                 <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
+                </div>
+            </td>
+            <td data-category="Animals" data-points="300">
+                <div class="clue-points">300</div>
+                <div class="clue-content hidden">
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
+                </div>
+            </td>
+            <td data-category="Random" data-points="300">
+                <div class="clue-points">300</div>
+                <div class="clue-content hidden">
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
                 </div>
             </td>
         </tr>
+
+        <!-- 400 points row -->
         <tr>
-            <td data-category="Sports" data-points="600">
-                <div class="clue-points">600</div>
+            <td data-category="Disney" data-points="400">
+                <div class="clue-points">400</div>
                 <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
                 </div>
             </td>
-            <td data-category="Music" data-points="600">
-                <div class="clue-points">600</div>
+            <td data-category="Literature" data-points="400">
+                <div class="clue-points">400</div>
                 <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
                 </div>
             </td>
-            <td
-                    data-category="History" data-points="600">
-                <div class="clue-points">600</div>
+            <td data-category="Just for fun" data-points="400">
+                <div class="clue-points">400</div>
                 <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
                 </div>
             </td>
-            <td data-category="Quotes" data-points="600">
-                <div class="clue-points">600</div>
+            <td data-category="Animals" data-points="400">
+                <div class="clue-points">400</div>
                 <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
                 </div>
             </td>
-            <td data-category="Misc." data-points="600">
-                <div class="clue-points">600</div>
+            <td data-category="Random" data-points="400">
+                <div class="clue-points">400</div>
                 <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
                 </div>
             </td>
         </tr>
+
+        <!-- 500 points row -->
         <tr>
-            <td data-category="Sports" data-points="800">
-                <div class="clue-points">800</div>
+            <td data-category="Disney" data-points="500">
+                <div class="clue-points">500</div>
                 <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
                 </div>
             </td>
-            <td data-category="Music" data-points="800">
-                <div class="clue-points">800</div>
+            <td data-category="Literature" data-points="500">
+                <div class="clue-points">500</div>
                 <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
                 </div>
             </td>
-            <td
-                    data-category="History" data-points="800">
-                <div class="clue-points">800</div>
+            <td data-category="Just for fun" data-points="500">
+                <div class="clue-points">500</div>
                 <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
                 </div>
             </td>
-            <td data-category="Quotes" data-points="800">
-                <div class="clue-points">800</div>
+            <td data-category="Animals" data-points="500">
+                <div class="clue-points">500</div>
                 <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
                 </div>
             </td>
-            <td data-category="Misc." data-points="800">
-                <div class="clue-points">800</div>
+            <td data-category="Random" data-points="500">
+                <div class="clue-points">500</div>
                 <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td data-category="Sports" data-points="1000">
-                <div class="clue-points">1000</div>
-                <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
-                </div>
-            </td>
-            <td data-category="Music" data-points="1000">
-                <div class="clue-points">1000</div>
-                <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
-                </div>
-            </td>
-            <td
-                    data-category="History" data-points="1000">
-                <div class="clue-points">1000</div>
-                <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
-                </div>
-            </td>
-            <td data-category="Quotes" data-points="1000">
-                <div class="clue-points">1000</div>
-                <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
-                </div>
-            </td>
-            <td data-category="Misc." data-points="1000">
-                <div class="clue-points">1000</div>
-                <div class="clue-content hidden">
-                    <p class="clue-question">What color do you get when you mix red and blue?</p>
-                    <p class="clue-answer hidden">What is purple?</p>
+                    <p class="clue-question"></p>
+                    <p class="clue-answer hidden"></p>
                 </div>
             </td>
         </tr>
@@ -233,7 +233,6 @@
 <div class="controls">
     <button id="reset-btn" class="reset-button">New Game / Reset Board</button>
 </div>
-
 
 <p><a href="index.html">Back to index</a></p>
 <hr>
