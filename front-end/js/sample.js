@@ -120,3 +120,4 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('reset-btn').addEventListener('click', resetBoard);
 
 });
+//comment
