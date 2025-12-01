@@ -10,7 +10,6 @@
 ### SQLite database files ###
 *.db
 *.db3
-*.sqlite
 *.sqlite3
 
 # Dependency directories
