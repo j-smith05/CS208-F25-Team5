@@ -12,24 +12,30 @@ function updateScores() {
 async function loadCluesOnBoard() {
     try {
         const response = await fetch("http://localhost:8080/api/jeopardy");
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const allClues = await response.json();
         console.log("Loaded clues:", allClues);
 
         const clueCells = document.querySelectorAll('.my-table td');
 
         clueCells.forEach(cell => {
-            const category = cell.dataset.category;
+            const category = cell.dataset.category.trim().toLowerCase();
             const points = parseInt(cell.dataset.points);
 
+            // Find clue with case-insensitive category match and exact points
             const clue = allClues.find(c =>
-                c.category === category && c.points === points
+                c.category.trim().toLowerCase() === category &&
+                parseInt(c.points) === points
             );
 
             if (clue) {
                 const questionElement = cell.querySelector('.clue-question');
                 const answerElement = cell.querySelector('.clue-answer');
+
                 if (questionElement) questionElement.textContent = clue.question;
                 if (answerElement) answerElement.textContent = clue.answer;
+            } else {
+                console.warn(`No clue found for category="${category}" points=${points}`);
             }
         });
     } catch (error) {
