@@ -26,3 +26,17 @@ Access the [Scrum Linter Report](https://scrumlinter.boisestate.edu/CS208F25Scru
 TBD: The last part of the `README.md` file is optional, and the team can remove it or use it as they see fit.
 
 The team can add new sections if needed.
+
+## THIS MAKES IT WORK, PAY ATTENTION TO THIS
+- This is what will make the game run. If you do not do this, your server.js will not run and the questions will not show up properly
+
+- ## FIRST
+    - Navigate to the back-end folder of the project in a bash terminal, and type: npm install
+    - Let it do its thing
+ 
+- ## SECOND
+    - Start server.js in the back-end folder, or run node server.js
+    - Open sample.html in front-end, and either run it or open in with chrome.
+ 
+- ## THINGS TO NOT DO
+    - DO NOT MAKE A DATABASE. I am unsure if it breaks the thing or not, but just don't do it (Calvin) 
