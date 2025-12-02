@@ -53,3 +53,14 @@ FROM
     jeopardy
 WHERE
         categories = 'Literature';
+
+INSERT INTO justforfun(id, questions, answers, points)
+SELECT
+    id,
+    questions,
+    answers,
+    points
+FROM
+    jeopardy
+WHERE
+        categories = 'Just for fun';

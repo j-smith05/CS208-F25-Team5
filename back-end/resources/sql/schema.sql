@@ -34,3 +34,12 @@ CREATE TABLE literature
     points     INTEGER
 
 );
+
+CREATE TABLE justforfun
+(
+    id         INTEGER,
+    questions  VARCHAR(100),
+    answers    VARCHAR(100),
+    points     INTEGER
+
+);
