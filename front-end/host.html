@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jeopardy Host Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+</head>
+
+<body>
+
+<div id="winnerDisplay">This is where the winner will be displayed TBD</div>
+<button id="openBtn">Open Buzzers</button>
+<button id="resetBtn">Reset Buzzers</button>
+
+    <script>
+        const socket = io('http://localhost:8080');
+
+        // Host opens the buzzers
+        document.getElementById("openBtn").onclick = () => {
+            socket.emit("openBuzzers");
+        };
+
+        // Host resets the buzzers
+        document.getElementById("resetBtn").onclick = () => {
+            socket.emit("resetBuzzers");
+        };
+
+        // Show winner (host gets notified too)
+        socket.on("buzzWinner", (winner) => {
+            document.getElementById("winnerDisplay").textContent = `${winner} buzzed first!`;
+        });
+    </script>
+
+</body>
+
+</html>

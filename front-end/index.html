@@ -20,6 +20,41 @@
         </ul>
     </nav>
 
+    <p>Player Name: <span id="idPlayerName">TBD</span></p>
+    <button id="idButtonBuzz" disabled>BUZZ!</button>
+    <p id="idStatusBuzzWinner">TBD Status of who pressed the button first</p>
+
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+    <script>
+        const socket = io('http://localhost:8080');
+
+        // Ask player name
+        let playerName = prompt("Enter your team/player name:");
+        document.getElementById("idPlayerName").innerText = playerName;
+        socket.emit("registerPlayer", playerName);
+
+        // Click to buzz
+        document.getElementById("idButtonBuzz").onclick = () => {
+            socket.emit("buzz");
+        };
+
+        // Listen for events from server
+        socket.on("buzzersOpen", () => {
+            document.getElementById("idStatusBuzzWinner").textContent = "Buzzers are OPEN!";
+            document.getElementById("idButtonBuzz").disabled = false;
+        });
+
+        socket.on("buzzWinner", (winner) => {
+            document.getElementById("idStatusBuzzWinner").textContent = `${winner} buzzed first!`;
+            document.getElementById("idButtonBuzz").disabled = true;
+        });
+
+        socket.on("buzzersReset", () => {
+            document.getElementById("idStatusBuzzWinner").textContent = "Buzzers reset.";
+            document.getElementById("idButtonBuzz").disabled = true;
+        });
+    </script>
+
 </body>
 
 </html>
