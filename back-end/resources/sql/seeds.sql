@@ -42,3 +42,14 @@ INSERT INTO disney(id, questions, answers, points)
         jeopardy
     WHERE
         categories = 'Disney';
+
+INSERT INTO literature(id, questions, answers, points)
+SELECT
+    id,
+    questions,
+    answers,
+    points
+FROM
+    jeopardy
+WHERE
+        categories = 'Literature';

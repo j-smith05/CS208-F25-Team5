@@ -5,6 +5,7 @@
 
 DROP TABLE IF EXISTS jeopardy;
 DROP TABLE IF EXISTS disney;
+DROP TABLE IF EXISTS literature;
 
 CREATE TABLE jeopardy
 (
@@ -24,3 +25,12 @@ CREATE TABLE disney
     points     INTEGER
 
     );
+
+CREATE TABLE literature
+(
+    id         INTEGER,
+    questions  VARCHAR(100),
+    answers    VARCHAR(100),
+    points     INTEGER
+
+);
