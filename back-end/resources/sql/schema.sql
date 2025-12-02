@@ -4,6 +4,7 @@
 --TODO Fix of Linter Report--
 
 DROP TABLE IF EXISTS jeopardy;
+DROP TABLE IF EXISTS disney;
 
 CREATE TABLE jeopardy
 (
@@ -13,4 +14,18 @@ CREATE TABLE jeopardy
     answers    VARCHAR(100),
     points     INTEGER
 
+);
+
+CREATE TABLE disney AS
+(
+    SELECT
+        id,
+        categories,
+        questions,
+        answers,
+        points
+    FROM
+        jeopardy
+    WHERE
+        categories = 'Disney'
 );
