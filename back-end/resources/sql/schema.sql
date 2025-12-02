@@ -16,16 +16,11 @@ CREATE TABLE jeopardy
 
 );
 
-CREATE TABLE disney AS
+CREATE TABLE disney
 (
-    SELECT
-        id,
-        categories,
-        questions,
-        answers,
-        points
-    FROM
-        jeopardy
-    WHERE
-        categories = 'Disney'
-);
+    id         INTEGER,
+    questions  VARCHAR(100),
+    answers    VARCHAR(100),
+    points     INTEGER
+
+    );

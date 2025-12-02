@@ -30,3 +30,15 @@ VALUES
     (23, 'Random', 'What holiday is celebrated on the second Sunday in May in the US?', 'Mothers day', 300),
     (24, 'Random', 'What is the planet with the most moons?', 'Saturn', 400),
     (25, 'Random', 'What color are the smurfs?', 'Blue', 500);
+
+
+INSERT INTO disney(id, questions, answers, points)
+    SELECT
+        id,
+        questions,
+        answers,
+        points
+    FROM
+        jeopardy
+    WHERE
+        categories = 'Disney';
