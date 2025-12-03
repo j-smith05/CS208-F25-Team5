@@ -4,10 +4,25 @@ console.log('sample.js is executing...');
 let team1Score = 0;
 let team2Score = 0;
 
+let team1Name = "Player 1";
+let team2Name = "Player 2";
+
 function updateScores() {
     document.getElementById('team1-score').textContent = team1Score;
     document.getElementById('team2-score').textContent = team2Score;
 }
+
+function setTeamNames() {
+    const team1Input = document.getElementById("team1-name-input");
+    const team2Input = document.getElementById("team2-name-input");
+
+    team1Name = team1Input.value.trim() || "Player 1";
+    team2Name = team2Input.value.trim() || "Player 2";
+
+    document.getElementById("team1-name-label").textContent = team1Name + ":";
+    document.getElementById("team2-name-label").textContent = team2Name + ":";
+}
+
 // Load clues onto the board
 async function loadCluesOnBoard() {
     try {
@@ -47,6 +62,17 @@ async function loadCluesOnBoard() {
 // Wait until the document is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
 
+    updateScores();
+
+    const startBtn = document.getElementById("start-game-btn");
+    if (startBtn) {
+        startBtn.addEventListener("click", () => {
+            setTeamNames();
+
+            const setupDiv = document.querySelector(".team-setup");
+            setupDiv.classList.add("hidden");
+        });
+    }
     loadCluesOnBoard();
 
     // Select all table cells that contain point values
@@ -76,14 +102,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // --- Ask which team got it right ---
                 const points = parseInt(cell.dataset.points);
-                const winner = prompt(`Who answered correctly? (Enter 1 for Player 1, 2 for Player 2, or leave blank if no one)`);
+                const winner = prompt(`Who answered correctly? (Enter 1 for ${team1Name}, 2 for ${team2Name}, or leave blank if no one)`);
+
 
                 if (winner === '1') {
                     team1Score += points;
-                    alert(`✅ Player 1 gains ${points} points!`);
+                    alert(`✅ ${team1Name} gains ${points} points!`);
                 } else if (winner === '2') {
                     team2Score += points;
-                    alert(`✅ Player 2 gains ${points} points!`);
+                    alert(`✅ ${team2Name} gains ${points} points!`);
                 } else {
                     alert(`❌ No points awarded.`);
                 }

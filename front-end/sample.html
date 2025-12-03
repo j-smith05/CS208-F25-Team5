@@ -8,17 +8,37 @@
 </head>
 <body>
 
+<!-- Team Name Setup -->
+<div class="team-setup">
+    <h2>Enter Team Names</h2>
+
+    <label>
+        Player 1 Name:
+        <input id="team1-name-input" type="text" placeholder="Player 1">
+    </label>
+    <br><br>
+
+    <label>
+        Player 2 Name:
+        <input id="team2-name-input" type="text" placeholder="Player 2">
+    </label>
+    <br><br>
+
+    <button id="start-game-btn" class="reset-button">Start Game</button>
+</div>
+
 <!-- Scoreboard hor -->
 <div class="scoreboard">
     <div class="team1-score">
-        <label for="team1-score">Player 1 Score:</label>
+        <label id="team1-name-label" for="team1-score">Player 1:</label>
         <span id="team1-score">0</span>
     </div>
     <div class="team2-score">
-        <label for="team2-score">Player 2 Score:</label>
+        <label id="team2-name-label" for="team2-score">Player 2:</label>
         <span id="team2-score">0</span>
     </div>
 </div>
+
 //this is to have something to commit/
 <!-- Game Board -->
 <div class="table-container">
