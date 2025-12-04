@@ -7,6 +7,18 @@ let team2Score = 0;
 let team1Name = "Player 1";
 let team2Name = "Player 2";
 
+const jeopardyMusic = new Audio('../sounds/Jeopardy-theme-song.mp3');
+let isLooping = false;
+
+
+function loopHandler(fileToPlay) {
+    const audio = fileToPlay;
+    if (isLooping) {
+        audio.currentTime = 0;
+        audio.play();
+    }
+}
+
 function updateScores() {
     document.getElementById('team1-score').textContent = team1Score;
     document.getElementById('team2-score').textContent = team2Score;
