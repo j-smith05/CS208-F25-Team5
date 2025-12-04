@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS jeopardy_2;
 DROP TABLE IF EXISTS disney;
 DROP TABLE IF EXISTS literature;
 DROP TABLE IF EXISTS team;
+DROP TABLE IF EXISTS animals;
 
 CREATE TABLE team
     (
@@ -55,6 +56,15 @@ CREATE TABLE literature
 );
 
 CREATE TABLE justforfun
+(
+    id         INTEGER,
+    questions  VARCHAR(100),
+    answers    VARCHAR(100),
+    points     INTEGER
+
+);
+
+CREATE TABLE animals
 (
     id         INTEGER,
     questions  VARCHAR(100),

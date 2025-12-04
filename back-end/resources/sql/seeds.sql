@@ -91,3 +91,14 @@ FROM
     jeopardy
 WHERE
         categories = 'Just for fun';
+
+INSERT INTO animals(id, questions, answers, points)
+SELECT
+    id,
+    questions,
+    answers,
+    points
+FROM
+    jeopardy
+WHERE
+        categories = 'Animals';
