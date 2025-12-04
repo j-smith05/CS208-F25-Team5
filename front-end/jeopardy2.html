@@ -8,70 +8,101 @@
 </head>
 <body>
 
+<!-- Team Name Setup -->
+<div class="team-setup">
+    <h2>Enter Team Names</h2>
+
+    <label>
+        Player 1 Name:
+        <input id="team1-name-input" type="text" placeholder="Player 1">
+    </label>
+    <br><br>
+
+    <label>
+        Player 2 Name:
+        <input id="team2-name-input" type="text" placeholder="Player 2">
+    </label>
+    <br><br>
+
+    <button id="start-game-btn" class="reset-button">Start Game</button>
+</div>
+
 <!-- Scoreboard hor -->
 <div class="scoreboard">
     <div class="team1-score">
-        <label for="team1-score">Player 1 Score:</label>
+        <label id="team1-name-label" for="team1-score">Player 1:</label>
         <span id="team1-score">0</span>
     </div>
     <div class="team2-score">
-        <label for="team2-score">Player 2 Score:</label>
+        <label id="team2-name-label" for="team2-score">Player 2:</label>
         <span id="team2-score">0</span>
     </div>
 </div>
+
 //this is to have something to commit/
 <!-- Game Board -->
 <div class="table-container">
     <table class="my-table">
         <thead>
         <tr>
-            <th>Disney</th>
-            <th>Literature</th>
-            <th>Just for fun</th>
-            <th>Animals</th>
-            <th>Random</th>
+            <th>The 90s</th>
+            <th>Mythology</th>
+            <th>Food & Drink</th>
+            <th>Science</th>
+            <th>World Cities</th>
         </tr>
         </thead>
         <tbody>
-        <!-- Loop through 5 point rows: 100, 200, 300, 400, 500 -->
+
+        <!-- 100 row -->
         <tr>
-            <td data-category="Disney" data-points="100"><div class="clue-points">100</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Literature" data-points="100"><div class="clue-points">100</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Just for fun" data-points="100"><div class="clue-points">100</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Animals" data-points="100"><div class="clue-points">100</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Random" data-points="100"><div class="clue-points">100</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="The 90s" data-points="100"><div class="clue-points">100</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="Mythology" data-points="100"><div class="clue-points">100</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="Food & Drink" data-points="100"><div class="clue-points">100</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="Science" data-points="100"><div class="clue-points">100</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="World Cities" data-points="100"><div class="clue-points">100</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
         </tr>
+
+        <!-- 200 row -->
         <tr>
-            <td data-category="Disney" data-points="200"><div class="clue-points">200</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Literature" data-points="200"><div class="clue-points">200</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Just for fun" data-points="200"><div class="clue-points">200</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Animals" data-points="200"><div class="clue-points">200</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Random" data-points="200"><div class="clue-points">200</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="The 90s" data-points="200"><div class="clue-points">200</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="Mythology" data-points="200"><div class="clue-points">200</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="Food & Drink" data-points="200"><div class="clue-points">200</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="Science" data-points="200"><div class="clue-points">200</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="World Cities" data-points="200"><div class="clue-points">200</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
         </tr>
+
+        <!-- 300 row -->
         <tr>
-            <td data-category="Disney" data-points="300"><div class="clue-points">300</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Literature" data-points="300"><div class="clue-points">300</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Just for fun" data-points="300"><div class="clue-points">300</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Animals" data-points="300"><div class="clue-points">300</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Random" data-points="300"><div class="clue-points">300</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="The 90s" data-points="300"><div class="clue-points">300</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="Mythology" data-points="300"><div class="clue-points">300</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="Food & Drink" data-points="300"><div class="clue-points">300</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="Science" data-points="300"><div class="clue-points">300</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="World Cities" data-points="300"><div class="clue-points">300</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
         </tr>
+
+        <!-- 400 row -->
         <tr>
-            <td data-category="Disney" data-points="400"><div class="clue-points">400</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Literature" data-points="400"><div class="clue-points">400</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Just for fun" data-points="400"><div class="clue-points">400</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Animals" data-points="400"><div class="clue-points">400</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Random" data-points="400"><div class="clue-points">400</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="The 90s" data-points="400"><div class="clue-points">400</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="Mythology" data-points="400"><div class="clue-points">400</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="Food & Drink" data-points="400"><div class="clue-points">400</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="Science" data-points="400"><div class="clue-points">400</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="World Cities" data-points="400"><div class="clue-points">400</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
         </tr>
+
+        <!-- 500 row -->
         <tr>
-            <td data-category="Disney" data-points="500"><div class="clue-points">500</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Literature" data-points="500"><div class="clue-points">500</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Just for fun" data-points="500"><div class="clue-points">500</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Animals" data-points="500"><div class="clue-points">500</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
-            <td data-category="Random" data-points="500"><div class="clue-points">500</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="The 90s" data-points="500"><div class="clue-points">500</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="Mythology" data-points="500"><div class="clue-points">500</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="Food & Drink" data-points="500"><div class="clue-points">500</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="Science" data-points="500"><div class="clue-points">500</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
+            <td data-category="World Cities" data-points="500"><div class="clue-points">500</div><div class="clue-content hidden"><p class="clue-question"></p><p class="clue-answer hidden"></p></div></td>
         </tr>
+
         </tbody>
     </table>
 </div>
+
 
 <!-- Reset Button -->
 <div class="controls">
