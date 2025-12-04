@@ -31,6 +31,33 @@ VALUES
     (24, 'Random', 'What is the planet with the most moons?', 'Saturn', 400),
     (25, 'Random', 'What color are the smurfs?', 'Blue', 500);
 
+INSERT INTO jeopardy_2(id, categories, questions, answers, points)
+VALUES
+    (26, 'The 90s', 'Which Spice Girl was known as Posh Spice?', 'Victoria Beckham', 100),
+    (27, 'The 90s', 'The show "Friends" primarily takes place in which city?', 'New York City', 200),
+    (28, 'The 90s', 'What virtual pet toy required you to feed and clean up after it?', 'Tamagotchi', 300),
+    (29, 'The 90s', 'Which classic Nintendo 64 game features the character Link?', 'The Legend of Zelda: Ocarina of Time', 400),
+    (30, 'The 90s', 'What grunge band was fronted by the late Kurt Cobain?', 'Nirvana', 500),
+    (31, 'Mythology', 'Who is the Greek god of the sea?', 'Poseidon', 100),
+    (32, 'Mythology', 'Which creature is a half-man, half-bull?', 'Minotaur', 200),
+    (33, 'Mythology', 'Who lost his wings after flying too close to the sun?', 'Icarus', 300),
+    (34, 'Mythology', 'What is the name of Thor''s hammer?', 'Mjolnir', 400),
+    (35, 'Mythology', 'What animal guarded the Golden Fleece?', 'Dragon', 500),
+    (36, 'Food & Drink', 'What is the main ingredient in guacamole?', 'Avocado', 100),
+    (37, 'Food & Drink', 'This country is famous for inventing pizza.', 'Italy', 200),
+    (38, 'Food & Drink', 'Which cheese is traditionally used to top French Onion Soup?', 'Gruyère', 300),
+    (39, 'Food & Drink', 'What type of vegetable is a sweet potato?', 'Root vegetable', 400),
+    (40, 'Food & Drink', 'What is the active ingredient in chili peppers that makes them spicy?', 'Capsaicin', 500),
+    (41, 'Science', 'What is the chemical symbol for gold?', 'Au', 100),
+    (42, 'Science', 'Which planet is known as the "Red Planet"?', 'Mars', 200),
+    (43, 'Science', 'What is the smallest bone in the human body?', 'Stapes (Stirrup)', 300),
+    (44, 'Science', 'The process by which plants convert light energy into chemical energy.', 'Photosynthesis', 400),
+    (45, 'Science', 'What unit is used to measure electrical resistance?', 'Ohm', 500),
+    (46, 'World Cities', 'What is the capital city of France?', 'Paris', 100),
+    (47, 'World Cities', 'The Great Pyramid of Giza is located near which major city?', 'Cairo', 200),
+    (48, 'World Cities', 'What city is home to the Sydney Opera House?', 'Sydney', 300),
+    (49, 'World Cities', 'What is the most populous city in the world?', 'Tokyo', 400),
+    (50, 'World Cities', 'In which European city would you find the Colosseum?', 'Rome', 500);
 
 INSERT INTO disney(id, questions, answers, points)
     SELECT
