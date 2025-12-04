@@ -92,7 +92,7 @@ FROM
 WHERE
         categories = 'Just for fun';
 
-INSERT INTO animals(id, questions, answers, points)
+INSERT INTO animals(id, questions, answers, points) --Added for #31
 SELECT
     id,
     questions,

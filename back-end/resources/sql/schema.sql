@@ -64,7 +64,7 @@ CREATE TABLE justforfun
 
 );
 
-CREATE TABLE animals
+CREATE TABLE animals --Added for #31
 (
     id         INTEGER,
     questions  VARCHAR(100),
