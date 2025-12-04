@@ -149,6 +149,38 @@ function getQuestionData(questionID, fieldName)
         });
     });
 }
+
+function getQuestionData2(questionID, fieldName)
+{
+    return new Promise(function (resolve, reject) {
+        const allowedFields = ['points', 'questions', 'answers', 'categories'];
+        if (!allowedFields.includes(fieldName)) {
+            return Promise.reject(new Error(`Invalid field name requested: ${fieldName}`));
+        }
+
+        if (typeof questionID !== 'number' || isNaN(questionID)){
+            return reject(new Error("Invalid question number provided"))
+        }
+        db.serialize(function() {
+            const sql =
+                `select ${fieldName}
+                from jeopardy_2
+                where id = ?`;
+
+            db.get(sql, [questionID], function (err, row) {
+                if (err) {
+                    return reject(err);
+                }
+
+                if (!row) {
+                    return resolve(null);
+                }
+
+                resolve(row[fieldName]);
+            });
+        });
+    });
+}
 function getAllJeopardyQuestions() {
     return new Promise(function(resolve, reject) {
         db.serialize(function() {
@@ -156,6 +188,39 @@ function getAllJeopardyQuestions() {
             const sql = `
                 SELECT id, categories, questions, answers, points
                 FROM jeopardy
+                ORDER BY categories, points;
+            `;
+
+            const list = [];
+
+            db.each(
+                sql,
+                function(err, row) {
+                    if (err) return reject(err);
+
+                    list.push({
+                        id: row.id,
+                        category: row.categories,
+                        question: row.questions,
+                        answer: row.answers,
+                        points: row.points
+                    });
+                },
+                function() {
+                    resolve(list);
+                }
+            );
+        });
+    });
+}
+
+function getAllJeopardy2Questions() {
+    return new Promise(function(resolve, reject) {
+        db.serialize(function() {
+
+            const sql = `
+                SELECT id, categories, questions, answers, points
+                FROM jeopardy_2
                 ORDER BY categories, points;
             `;
 
@@ -203,5 +268,7 @@ function printTableHeader(listOfColumnNames)
 module.exports = {
     getAllSamples,
     getQuestionData,
-    getAllJeopardyQuestions
+    getAllJeopardyQuestions,
+    getQuestionData2,
+    getAllJeopardy2Questions
 };
