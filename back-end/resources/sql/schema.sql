@@ -72,3 +72,12 @@ CREATE TABLE animals
     points     INTEGER
 
 );
+
+CREATE TABLE random
+(
+    id         INTEGER,
+    questions  VARCHAR(100),
+    answers    VARCHAR(100),
+    points     INTEGER
+
+);

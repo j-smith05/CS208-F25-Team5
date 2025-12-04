@@ -102,3 +102,14 @@ FROM
     jeopardy
 WHERE
         categories = 'Animals';
+
+INSERT INTO random(id, questions, answers, points)
+SELECT
+    id,
+    questions,
+    answers,
+    points
+FROM
+    jeopardy
+WHERE
+        categories = 'Random';
