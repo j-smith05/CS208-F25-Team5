@@ -81,3 +81,48 @@ CREATE TABLE random
     points     INTEGER
 
 );
+
+CREATE TABLE the90s
+(
+    id         INTEGER,
+    questions  VARCHAR(100),
+    answers    VARCHAR(100),
+    points     INTEGER
+
+);
+
+CREATE TABLE mythology
+(
+    id         INTEGER,
+    questions  VARCHAR(100),
+    answers    VARCHAR(100),
+    points     INTEGER
+
+);
+
+CREATE TABLE foodAndDrink
+(
+    id         INTEGER,
+    questions  VARCHAR(100),
+    answers    VARCHAR(100),
+    points     INTEGER
+
+);
+
+CREATE TABLE science
+(
+    id         INTEGER,
+    questions  VARCHAR(100),
+    answers    VARCHAR(100),
+    points     INTEGER
+
+);
+
+CREATE TABLE worldCities
+(
+    id         INTEGER,
+    questions  VARCHAR(100),
+    answers    VARCHAR(100),
+    points     INTEGER
+
+);

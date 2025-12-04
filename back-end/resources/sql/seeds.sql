@@ -113,3 +113,58 @@ FROM
     jeopardy
 WHERE
         categories = 'Random';
+
+INSERT INTO the90s(id, questions, answers, points)
+SELECT
+    id,
+    questions,
+    answers,
+    points
+FROM
+    jeopardy_2
+WHERE
+        categories = 'The 90s';
+
+INSERT INTO mythology(id, questions, answers, points)
+SELECT
+    id,
+    questions,
+    answers,
+    points
+FROM
+    jeopardy_2
+WHERE
+        categories = 'Mythology';
+
+INSERT INTO foodAndDrink(id, questions, answers, points)
+SELECT
+    id,
+    questions,
+    answers,
+    points
+FROM
+    jeopardy_2
+WHERE
+        categories = 'Food & Drink';
+
+INSERT INTO science(id, questions, answers, points)
+SELECT
+    id,
+    questions,
+    answers,
+    points
+FROM
+    jeopardy_2
+WHERE
+        categories = 'Science';
+
+INSERT INTO worldCities(id, questions, answers, points)
+SELECT
+    id,
+    questions,
+    answers,
+    points
+FROM
+    jeopardy_2
+WHERE
+        categories = 'World Cities';
