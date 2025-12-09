@@ -1,0 +1,133 @@
+/*
+Q: Can we create additional .css files in this folder?
+Absolutely, the team can create as many .css files as needed.
+*/
+
+body {
+    font: normal 30px Verdana, Arial, sans-serif;
+}
+/* Basic table styling to look like a game board */
+.my-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: sans-serif;
+}
+
+.my-table th {
+    background-color: #A60D0D; /* Jeopardy Red */
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    border: 3px solid #000;
+}
+
+.my-table td {
+    background-color: #FF2700; /* Jeopardy Red */
+    color: #1B821B; /* Green point values */
+    text-align: center;
+    vertical-align: middle;
+    height: 120px;
+    font-size: 48px;
+    font-weight: bold;
+    cursor: pointer; /* Indicates it's clickable */
+    border: 3px solid #000;
+    transition: background-color 0.5s;
+}
+
+/* Style for the used cell */
+.my-table td.used {
+    background-color: #222; /* Darker gray when used */
+    color: #444; /* Faded point value */
+    pointer-events: none; /* Prevents further clicks */
+    cursor: default;
+}
+
+/* Styling for the clue text */
+.clue-content {
+    font-size: 24px;
+    color: white;
+    padding: 10px;
+}
+
+/* Styles for hiding and showing content */
+.hidden {
+    display: none;
+}
+
+.reset-button {
+    margin: 15px 0;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    background-color: #007FFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    background-color: #005FCC;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    padding: 40px 60px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.game-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.game-list li {
+    margin: 15px 0;
+}
+
+.game-list a {
+    display: inline-block;
+    width: 220px;
+    padding: 12px;
+    text-decoration: none;
+    background-color: #0047ab;
+    color: white;
+    border-radius: 6px;
+    font-size: 18px;
+}
+
+.game-list a:hover {
+    background-color: #003080;
+}
+
+.team-setup {
+    margin: 20px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+#team1-name-label,
+#team2-name-label {
+    font-weight: bold;
+    font-size: 24px;
+}
+
