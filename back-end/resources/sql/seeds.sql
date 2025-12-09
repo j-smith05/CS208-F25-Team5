@@ -168,3 +168,6 @@ FROM
     jeopardy_2
 WHERE
         categories = 'World Cities';
+
+INSERT INTO team_answers (team_id, question_id, is_correct)
+VALUES (1, 7, 1);
