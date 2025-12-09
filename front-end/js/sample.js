@@ -187,6 +187,20 @@ document.addEventListener('DOMContentLoaded', () => {
         team2Score = 0;
         updateScores();
 
+        // ✅ Reset Team Names
+        team1Name = "Player 1";
+        team2Name = "Player 2";
+
+        document.getElementById("team1-name-label").textContent = "Player 1:";
+        document.getElementById("team2-name-label").textContent = "Player 2:";
+
+        // ✅ Clear Input Fields
+        document.getElementById("team1-name-input").value = "";
+        document.getElementById("team2-name-input").value = "";
+
+        // ✅ Show Setup Screen Again (Optional but Recommended)
+        const setupDiv = document.querySelector(".team-setup");
+        setupDiv.classList.remove("hidden");
         loadCluesOnBoard();
     }
 
