@@ -12,6 +12,15 @@ DROP TABLE IF EXISTS animals;
 DROP TABLE IF EXISTS team_answers;
 DROP VIEW IF EXISTS  all_questions;
 DROP VIEW IF Exists  team_scoreboard;
+DROP VIEW IF EXISTS team_question_details;
+DROP TABLE IF EXISTS foodAndDrink;
+DROP TABLE IF EXISTS justforfun;
+DROP TABLE IF EXISTS mythology;
+DROP TABLE IF EXISTS random;
+DROP TABLE IF EXISTS science;
+DROP TABLE IF EXISTS the90s;
+DROP TABLE IF EXISTS worldCities;
+
 
 CREATE TABLE team
     (
