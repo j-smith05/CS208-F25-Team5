@@ -125,41 +125,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // --- Game Logic ---
 
-            // State 1: Showing the point value (first click)
+// State 1: Showing the point value (first click → show question)
             if (pointsDisplay && !pointsDisplay.classList.contains('hidden')) {
                 pointsDisplay.classList.add('hidden');
                 clueContent.classList.remove('hidden');
-                cell.style.backgroundColor = '#007FFF'; // Lighter blue for active question
+                cell.style.backgroundColor = '#007FFF'; // Active question
             }
-            // State 2: Showing the question (second click)
+
+// State 2: Showing the question (second click → show answer ONLY)
             else if (clueAnswer && clueAnswer.classList.contains('hidden')) {
                 clueAnswer.classList.remove('hidden');
-                cell.style.backgroundColor = '#FF0000'; // Red for answer reveal
+                cell.style.backgroundColor = '#FF0000'; // Answer reveal
+            }
 
-                // --- Ask which team got it right ---
+// State 3: Scoring + mark as used (third click)
+            else {
                 const points = parseInt(cell.dataset.points);
-                const winner = prompt(`Who answered correctly? (Enter 1 for ${team1Name}, 2 for ${team2Name}, or leave blank if no one)`);
-
+                const winner = prompt(
+                    `Who answered correctly?\nEnter 1 for ${team1Name},\n2 for ${team2Name},\nor leave blank if no one`
+                );
 
                 if (winner === '1') {
                     team1Score += points;
                     alert(`✅ ${team1Name} gains ${points} points!`);
-                } else if (winner === '2') {
+                }
+                else if (winner === '2') {
                     team2Score += points;
                     alert(`✅ ${team2Name} gains ${points} points!`);
-                } else {
+                }
+                else {
                     alert(`❌ No points awarded.`);
                 }
+
                 updateScores();
-            }
 
-
-            // State 3: Mark as used (third click)
-            else {
+                // Final cleanup
                 cell.classList.add('used');
                 clueContent.classList.add('hidden');
                 if (pointsDisplay) pointsDisplay.classList.remove('hidden');
-                cell.style.backgroundColor = ''; // Reset background
+                cell.style.backgroundColor = ''; // Reset
             }
         });
     });
