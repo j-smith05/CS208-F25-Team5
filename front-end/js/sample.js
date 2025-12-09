@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // --- Game Logic ---
 
-// State 1: Showing the point value (first click → show question)
+            // State 1: Showing the point value (first click → show question)
             if (pointsDisplay && !pointsDisplay.classList.contains('hidden')) {
                 pointsDisplay.classList.add('hidden');
                 clueContent.classList.remove('hidden');
@@ -136,27 +136,49 @@ document.addEventListener('DOMContentLoaded', () => {
                 startLoop(jeopardy);
             }
 
-// State 2: Showing the question (second click → show answer ONLY)
+            // State 2: Showing the question (second click → show answer ONLY)
             else if (clueAnswer && clueAnswer.classList.contains('hidden')) {
                 clueAnswer.classList.remove('hidden');
                 cell.style.backgroundColor = '#FF0000'; // Answer reveal
             }
 
-// State 3: Scoring + mark as used (third click)
+            // State 3: Scoring + mark as used (third click)
             else {
-                const points = parseInt(cell.dataset.points);
-                const winner = prompt(
-                    `Who answered correctly?\nEnter 1 for ${team1Name},\n2 for ${team2Name},\nor leave blank if no one`
-                );
+                const points = parseInt(cell.dataset.points); // ✅ ALWAYS use cell value
+                let winner = null;
+
+                while (winner === null) {
+                    const input = prompt(
+                        `Who answered correctly?\n` +
+                        `1 = ${team1Name}\n` +
+                        `2 = ${team2Name}\n` +
+                        `3 = Neither team`
+                    );
+
+                    if (input === null) {
+                        alert("Selection cancelled. No points awarded.");
+                        winner = "3";
+                    }
+                    else {
+                        const cleaned = input.trim();
+
+                        if (cleaned === "1" || cleaned === "2" || cleaned === "3") {
+                            winner = cleaned;
+                        }
+                        else {
+                            alert("❌ Invalid input. Please enter ONLY 1, 2, or 3.");
+                        }
+                    }
+                }
 
                 stopLoop();
 
-                if (winner === '1') {
+                if (winner === "1") {
                     team1Score += points;
                     alert(`✅ ${team1Name} gains ${points} points!`);
                     new Audio(correctSound).play();
                 }
-                else if (winner === '2') {
+                else if (winner === "2") {
                     team2Score += points;
                     alert(`✅ ${team2Name} gains ${points} points!`);
                     new Audio(correctSound).play();
@@ -171,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cell.classList.add('used');
                 clueContent.classList.add('hidden');
                 if (pointsDisplay) pointsDisplay.classList.remove('hidden');
-                cell.style.backgroundColor = ''; // Reset
+                cell.style.backgroundColor = '';
             }
         });
     });
