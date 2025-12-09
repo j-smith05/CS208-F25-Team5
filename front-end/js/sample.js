@@ -10,6 +10,8 @@ let team2Name = "Player 2";
 let currentAudio = null;
 let isLooping = false;
 
+let jeopardy = "../sounds/Jeopardy-theme-song.mp3/"
+let correctSound = "../sounds/rightanswer.mp3."
 
 function loopHandler() {
     if (isLooping && currentAudio) {
@@ -36,7 +38,7 @@ function stopLoop() {
     isLooping = false;
 
     if (currentAudio) {
-        currentAudio.pause;
+        currentAudio.pause();
         currentAudio.currentTime = 0;
         currentAudio.removeEventListener('ended', loopHandler);
         currentAudio = null;
