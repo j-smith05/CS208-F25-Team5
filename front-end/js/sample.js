@@ -132,6 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 pointsDisplay.classList.add('hidden');
                 clueContent.classList.remove('hidden');
                 cell.style.backgroundColor = '#007FFF'; // Active question
+
+                startLoop(jeopardy);
             }
 
 // State 2: Showing the question (second click → show answer ONLY)
@@ -146,6 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const winner = prompt(
                     `Who answered correctly?\nEnter 1 for ${team1Name},\n2 for ${team2Name},\nor leave blank if no one`
                 );
+
+                stopLoop();
 
                 if (winner === '1') {
                     team1Score += points;
