@@ -154,10 +154,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (winner === '1') {
                     team1Score += points;
                     alert(`✅ ${team1Name} gains ${points} points!`);
+                    new Audio(correctSound).play();
                 }
                 else if (winner === '2') {
                     team2Score += points;
                     alert(`✅ ${team2Name} gains ${points} points!`);
+                    new Audio(correctSound).play();
                 }
                 else {
                     alert(`❌ No points awarded.`);
