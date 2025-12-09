@@ -2,6 +2,7 @@
 -- to create the tables or to "reset" the database to the expected structure
 
 
+--Change to make a commit for #56
 
 DROP TABLE IF EXISTS jeopardy;
 DROP TABLE IF EXISTS jeopardy_2;
