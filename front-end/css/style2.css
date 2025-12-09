@@ -58,7 +58,7 @@ body {
     margin: 15px 0;
     padding: 10px 20px;
     font-size: 1.1rem;
-    background-color: #007FFF;
+    background-color: #C44F4F;
     color: white;
     border: none;
     border-radius: 6px;
@@ -66,7 +66,7 @@ body {
 }
 
 .reset-button:hover {
-    background-color: #005FCC;
+    background-color: #00FF00;
 }
 
 body {
@@ -107,7 +107,7 @@ h1 {
     width: 220px;
     padding: 12px;
     text-decoration: none;
-    background-color: #0047ab;
+    background-color: #C44F4F;
     color: white;
     border-radius: 6px;
     font-size: 18px;
