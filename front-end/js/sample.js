@@ -3,6 +3,7 @@ console.log('sample.js is executing...');
 
 let team1Score = 0;
 let team2Score = 0;
+let scoreHistory = [];
 
 let team1Name = "Player 1";
 let team2Name = "Player 2";
@@ -49,6 +50,27 @@ function updateScores() {
     document.getElementById('team1-score').textContent = team1Score;
     document.getElementById('team2-score').textContent = team2Score;
 }
+
+function undoLastScore() {
+    if (scoreHistory.length === 0) {
+        alert("⚠️ No scores to undo.");
+        return;
+    }
+
+    const lastAction = scoreHistory.pop();
+
+    if (lastAction.team === 1) {
+        team1Score -= lastAction.points;
+        alert(`↩️ Undid ${lastAction.points} points from ${team1Name}`);
+    }
+    else if (lastAction.team === 2) {
+        team2Score -= lastAction.points;
+        alert(`↩️ Undid ${lastAction.points} points from ${team2Name}`);
+    }
+
+    updateScores();
+}
+
 
 function setTeamNames() {
     const team1Input = document.getElementById("team1-name-input");
@@ -174,11 +196,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 stopLoop();
 
                 if (winner === "1") {
+                    scoreHistory.push({ team: 1, points: points });
                     team1Score += points;
                     alert(`✅ ${team1Name} gains ${points} points!`);
                     new Audio(correctSound).play();
                 }
                 else if (winner === "2") {
+                    scoreHistory.push({ team: 2, points: points });
                     team2Score += points;
                     alert(`✅ ${team2Name} gains ${points} points!`);
                     new Audio(correctSound).play();
@@ -216,6 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
         team1Score = 0;
         team2Score = 0;
         updateScores();
+        scoreHistory = [];
 
         // ✅ Reset Team Names
         team1Name = "Player 1";
@@ -235,6 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.getElementById('reset-btn').addEventListener('click', resetBoard);
+    document.getElementById('undo-btn').addEventListener('click', undoLastScore);
 
 });
 //comment
