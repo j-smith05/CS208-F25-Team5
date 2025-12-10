@@ -69,7 +69,54 @@ function undoLastScore() {
     }
 
     updateScores();
+
+    // ✅ IMMEDIATELY RE-PROMPT FOR CORRECT WINNER
+    let winner = null;
+
+    while (winner === null) {
+        const input = prompt(
+            `Re-enter correct winner:\n` +
+            `1 = ${team1Name}\n` +
+            `2 = ${team2Name}\n` +
+            `3 = Neither team`
+        );
+
+        if (input === null) {
+            alert("Re-prompt cancelled. No points awarded.");
+            winner = "3";
+        }
+        else {
+            const cleaned = input.trim();
+
+            if (cleaned === "1" || cleaned === "2" || cleaned === "3") {
+                winner = cleaned;
+            }
+            else {
+                alert("❌ Invalid input. Please enter ONLY 1, 2, or 3.");
+            }
+        }
+    }
+
+    // ✅ APPLY CORRECTED SCORE
+    if (winner === "1") {
+        scoreHistory.push({ team: 1, points: lastAction.points });
+        team1Score += lastAction.points;
+        alert(`✅ ${team1Name} now gains ${lastAction.points} corrected points`);
+        new Audio(correctSound).play();
+    }
+    else if (winner === "2") {
+        scoreHistory.push({ team: 2, points: lastAction.points });
+        team2Score += lastAction.points;
+        alert(`✅ ${team2Name} now gains ${lastAction.points} corrected points`);
+        new Audio(correctSound).play();
+    }
+    else {
+        alert(`❌ No points re-awarded.`);
+    }
+
+    updateScores();
 }
+
 
 
 function setTeamNames() {
