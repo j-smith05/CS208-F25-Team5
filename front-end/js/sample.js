@@ -114,6 +114,7 @@ function undoLastScore() {
     }
     else {
         alert(`❌ No points re-awarded.`);
+        new Audio(incorrectSoundOne).play();
     }
 
     updateScores();
@@ -258,6 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 else {
                     alert(`❌ No points awarded.`);
+                    new Audio(incorrectSoundOne).play();
                 }
 
                 updateScores();
