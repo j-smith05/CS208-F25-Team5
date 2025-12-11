@@ -114,7 +114,11 @@ function undoLastScore() {
     }
     else {
         alert(`❌ No points re-awarded.`);
+        if (Math.floor(Math.random() * 2) == 1) {
         new Audio(incorrectSoundOne).play();
+        } else {
+            new Audio(incorrectSoundTwo).play();
+        }
     }
 
     updateScores();
@@ -259,7 +263,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 else {
                     alert(`❌ No points awarded.`);
-                    new Audio(incorrectSoundOne).play();
+                    if (Math.floor(Math.random() * 2) == 1) {
+                        new Audio(incorrectSoundOne).play();
+                    } else {
+                        new Audio(incorrectSoundTwo).play();
+                    }
                 }
 
                 updateScores();
