@@ -26,4 +26,16 @@ app.get('/', function (req, res)
 app.use('/', require('./routes/sample'));
 // TODO: add new routes here
 
+app.get('/team', function (req, res) {
+    const sql = '' +
+        'SELECT id, firstName, lastName, teamName' +
+        'FROM team' +
+        'ORDER BY id';
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({error: 'Database Error'});
+        }
+    });
+});
 module.exports = app;
