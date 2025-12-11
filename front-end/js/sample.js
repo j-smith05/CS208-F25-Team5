@@ -13,6 +13,8 @@ let isLooping = false;
 
 let jeopardy = "./sounds/Jeopardy-theme-song.mp3"
 let correctSound = "./sounds/rightanswer.mp3"
+let incorrectSoundOne = "./sounds/family-fortunes-wrong-buzzer.mp3"
+let incorrectSoundTwo = "./sounds/wrong-lie-incorrect-buzzer.mp3"
 
 function loopHandler() {
     if (isLooping && currentAudio) {
