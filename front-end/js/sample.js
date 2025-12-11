@@ -101,24 +101,27 @@ function undoLastScore() {
 
     // ✅ APPLY CORRECTED SCORE
     if (winner === "1") {
-        scoreHistory.push({ team: 1, points: lastAction.points });
-        team1Score += lastAction.points;
-        alert(`✅ ${team1Name} now gains ${lastAction.points} corrected points`);
-        new Audio(correctSound).play();
+        scoreHistory.push({ team: 1, points: points });
+        team1Score += points;
+        startLoop(correctSound);
+        alert(`✅ ${team1Name} gains ${points} points!`);
+        stopLoop();
     }
     else if (winner === "2") {
-        scoreHistory.push({ team: 2, points: lastAction.points });
-        team2Score += lastAction.points;
-        alert(`✅ ${team2Name} now gains ${lastAction.points} corrected points`);
-        new Audio(correctSound).play();
+        scoreHistory.push({ team: 2, points: points });
+        team2Score += points;
+        startLoop(correctSound);
+        alert(`✅ ${team2Name} gains ${points} points!`);
+        stopLoop();
     }
     else {
-        alert(`❌ No points re-awarded.`);
         if (Math.floor(Math.random() * 2) == 1) {
-        new Audio(incorrectSoundOne).play();
+            startLoop(incorrectSoundOne);
         } else {
-            new Audio(incorrectSoundTwo).play();
+            startLoop(incorrectSoundTwo);
         }
+        alert(`❌ No points awarded.`);
+        stopLoop();
     }
 
     updateScores();
@@ -252,22 +255,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (winner === "1") {
                     scoreHistory.push({ team: 1, points: points });
                     team1Score += points;
+                    startLoop(correctSound);
                     alert(`✅ ${team1Name} gains ${points} points!`);
-                    new Audio(correctSound).play();
+                    stopLoop();
                 }
                 else if (winner === "2") {
                     scoreHistory.push({ team: 2, points: points });
                     team2Score += points;
+                    startLoop(correctSound);
                     alert(`✅ ${team2Name} gains ${points} points!`);
-                    new Audio(correctSound).play();
+                    stopLoop();
                 }
                 else {
-                    alert(`❌ No points awarded.`);
                     if (Math.floor(Math.random() * 2) == 1) {
-                        new Audio(incorrectSoundOne).play();
+                        startLoop(incorrectSoundOne);
                     } else {
-                        new Audio(incorrectSoundTwo).play();
+                        startLoop(incorrectSoundTwo);
                     }
+                    alert(`❌ No points awarded.`);
+                    stopLoop();
                 }
 
                 updateScores();
