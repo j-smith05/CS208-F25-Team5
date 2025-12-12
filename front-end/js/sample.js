@@ -94,14 +94,15 @@ function undoLastScore() {
     stopLoop();
 
     const lastAction = scoreHistory.pop();
+    const points = lastAction.points;  // ✅ FIX: define points properly
 
     if (lastAction.team === 1) {
-        team1Score -= lastAction.points;
-        alert(`↩️ Undid ${lastAction.points} points from ${team1Name}`);
+        team1Score -= points;
+        alert(`↩️ Removed ${points} points from ${team1Name}`);
     }
     else if (lastAction.team === 2) {
-        team2Score -= lastAction.points;
-        alert(`↩️ Undid ${lastAction.points} points from ${team2Name}`);
+        team2Score -= points;
+        alert(`↩️ Removed ${points} points from ${team2Name}`);
     }
 
     updateScores();
@@ -119,42 +120,33 @@ function undoLastScore() {
         if (input === null) {
             alert("Re-prompt cancelled. No points awarded.");
             winner = "3";
-        }
-        else {
+        } else {
             const cleaned = input.trim();
-
             if (cleaned === "1" || cleaned === "2" || cleaned === "3") {
                 winner = cleaned;
-            }
-            else {
+            } else {
                 alert("❌ Invalid input. Please enter ONLY 1, 2, or 3.");
             }
         }
     }
 
-    // ✅ APPLY CORRECTED SCORE
     if (winner === "1") {
-        scoreHistory.push({ team: 1, points: points });
         team1Score += points;
-        startLoop(correctSound);
+        scoreHistory.push({ team: 1, points: points });
+        new Audio(correctSound).play();
         alert(`✅ ${team1Name} gains ${points} points!`);
-        stopLoop();
     }
     else if (winner === "2") {
-        scoreHistory.push({ team: 2, points: points });
         team2Score += points;
-        startLoop(correctSound);
+        scoreHistory.push({ team: 2, points: points });
+        new Audio(correctSound).play();
         alert(`✅ ${team2Name} gains ${points} points!`);
-        stopLoop();
     }
     else {
-        if (Math.floor(Math.random() * 2) == 1) {
-            startLoop(incorrectSoundOne);
-        } else {
-            startLoop(incorrectSoundTwo);
-        }
+        // Incorrect sound randomizer
+        const sound = Math.random() < 0.5 ? incorrectSoundOne : incorrectSoundTwo;
+        new Audio(sound).play();
         alert(`❌ No points awarded.`);
-        stopLoop();
     }
 
     updateScores();
