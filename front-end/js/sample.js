@@ -239,6 +239,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // State 1: Showing the point value (first click → show question)
             if (pointsDisplay && !pointsDisplay.classList.contains('hidden')) {
+
+                stopTimer();
+
                 pointsDisplay.classList.add('hidden');
                 clueContent.classList.remove('hidden');
                 cell.style.backgroundColor = '#007FFF'; // Active question
@@ -254,12 +257,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // State 2: Showing the question (second click → show answer ONLY)
             else if (clueAnswer && clueAnswer.classList.contains('hidden')) {
+
+                stopTimer();
+
                 clueAnswer.classList.remove('hidden');
                 cell.style.backgroundColor = '#FF0000'; // Answer reveal
             }
 
             // State 3: Scoring + mark as used (third click)
             else {
+
+                stopTimer();
+
                 const points = parseInt(cell.dataset.points); // ✅ ALWAYS use cell value
                 let winner = null;
 
