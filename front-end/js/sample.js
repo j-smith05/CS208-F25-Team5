@@ -364,5 +364,29 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('reset-btn').addEventListener('click', resetBoard);
     document.getElementById('undo-btn').addEventListener('click', undoLastScore);
 
+    document.getElementById("pause-timer-btn").addEventListener("click", () => {
+        clearInterval(timerInterval);
+    });
+
+    document.getElementById("resume-timer-btn").addEventListener("click", () => {
+        const timerDisplay = document.getElementById("timer-display");
+        if (timerDisplay.style.display === "none") return;
+
+        clearInterval(timerInterval);
+
+        timerInterval = setInterval(() => {
+            timeLeft--;
+            timerDisplay.textContent = timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                timerDisplay.style.display = "none";
+            }
+        }, 1000);
+    });
+
+    document.getElementById("cancel-timer-btn").addEventListener("click", () => {
+        stopTimer();
+    });
 });
 //comment
