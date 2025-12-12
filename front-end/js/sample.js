@@ -90,6 +90,9 @@ function undoLastScore() {
         return;
     }
 
+    stopTimer();
+    stopLoop();
+
     const lastAction = scoreHistory.pop();
 
     if (lastAction.team === 1) {
@@ -103,7 +106,6 @@ function undoLastScore() {
 
     updateScores();
 
-    // ✅ IMMEDIATELY RE-PROMPT FOR CORRECT WINNER
     let winner = null;
 
     while (winner === null) {
@@ -333,6 +335,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     function resetBoard() {
+
+        stopTimer();
+
         const clueCells = document.querySelectorAll('.my-table td');
 
         clueCells.forEach(cell => {
