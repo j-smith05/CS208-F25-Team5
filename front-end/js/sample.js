@@ -16,6 +16,9 @@ let correctSound = "./sounds/rightanswer.mp3"
 let incorrectSoundOne = "./sounds/family-fortunes-wrong-buzzer.mp3"
 let incorrectSoundTwo = "./sounds/wrong-lie-incorrect-buzzer.mp3"
 
+let timerInterval = null;
+let timeLeft = 10;
+
 function loopHandler() {
     if (isLooping && currentAudio) {
         currentAudio.currentTime = 0;
@@ -46,6 +49,34 @@ function stopLoop() {
         currentAudio.removeEventListener('ended', loopHandler);
         currentAudio = null;
     }
+}
+
+function startTimer(onExpire) {
+    const timerDisplay = document.getElementById("timer-display");
+
+    // Reset timer state
+    timeLeft = 10;
+    timerDisplay.textContent = timeLeft;
+    timerDisplay.style.display = "block";
+
+    // Clear any lingering timers
+    if (timerInterval) clearInterval(timerInterval);
+
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        timerDisplay.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            timerDisplay.style.display = "none";
+            onExpire();  // Auto-answer reveal
+        }
+    }, 1000);
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
+    document.getElementById("timer-display").style.display = "none";
 }
 
 function updateScores() {
@@ -211,6 +242,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 pointsDisplay.classList.add('hidden');
                 clueContent.classList.remove('hidden');
                 cell.style.backgroundColor = '#007FFF'; // Active question
+
+                startTimer(() => {
+                    clueAnswer.classList.remove("hidden");
+                    cell.style.backgroundColor = "#FF0000";
+                    alert("⏱ Time's up! No points can be awarded.");
+                });
 
                 startLoop(jeopardy);
             }
