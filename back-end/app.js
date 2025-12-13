@@ -141,4 +141,24 @@ app.patch('/team/:id', (req, res) => {
         res.json({ message: 'Team updated' });
     });
 });
+
+//DELETE team
+app.delete('/team/:id', (req, res) => {
+    const sql = `
+        DELETE FROM team
+        WHERE id = ?;
+    `;
+    const params = [req.params.id];
+
+    db.run(sql, params, function (err) {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ error: 'Database error' });
+        }
+        if (this.changes === 0) {
+            return res.status(404).json({ error: 'Team not found' });
+        }
+        res.json({ message: 'Team deleted' });
+    });
+});
 module.exports = app;
