@@ -45,4 +45,26 @@ app.get('/team', function (req, res) {
         }
     });
 });
+
+// GET one team by {id}
+
+app.get('/teams/:id', (req, res) => {
+    const sql = `
+        SELECT id, firstName, lastName, teamName
+        FROM team
+        WHERE id = ?;
+    `;
+    const params = [req.params.id];
+
+    db.get(sql, params, (err, row) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ error: 'Database error' });
+        }
+        if (!row) {
+            return res.status(404).json({ error: 'Team not found' });
+        }
+        res.json(row);
+    });
+});
 module.exports = app;
