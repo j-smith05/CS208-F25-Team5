@@ -48,7 +48,7 @@ app.get('/team', function (req, res) {
 
 // GET one team by {id}
 
-app.get('/teams/:id', (req, res) => {
+app.get('/team/:id', (req, res) => {
     const sql = `
         SELECT id, firstName, lastName, teamName
         FROM team
@@ -65,6 +65,37 @@ app.get('/teams/:id', (req, res) => {
             return res.status(404).json({ error: 'Team not found' });
         }
         res.json(row);
+    });
+});
+
+//POST create team
+
+app.post('/team', (req, res) => {
+    const { firstName, lastName, teamName } = req.body;
+
+
+    if (!firstName || !lastName || !teamName) {
+        return res.status(422).json({ error: 'firstName, lastName, and teamName are required' });
+    }
+
+    const sql = `
+        INSERT INTO team (firstName, lastName, teamName)
+        VALUES (?, ?, ?);
+    `;
+    const params = [firstName, lastName, teamName];
+
+    db.run(sql, params, function (err) {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ error: 'Database error' });
+        }
+        // this.lastID is the new team id
+        res.status(201).json({
+            id: this.lastID,
+            firstName,
+            lastName,
+            teamName
+        });
     });
 });
 module.exports = app;
