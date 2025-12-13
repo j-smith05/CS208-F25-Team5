@@ -98,4 +98,47 @@ app.post('/team', (req, res) => {
         });
     });
 });
+
+//PATCH update team
+app.patch('/team/:id', (req, res) => {
+    const id = req.params.id;
+    const { firstName, lastName, teamName } = req.body;
+    const fields = [];
+    const params = [];
+
+    if (firstName !== undefined) {
+        fields.push('firstName = ?');
+        params.push(firstName);
+    }
+    if (lastName !== undefined) {
+        fields.push('lastName = ?');
+        params.push(lastName);
+    }
+    if (teamName !== undefined) {
+        fields.push('teamName = ?');
+        params.push(teamName);
+    }
+
+    if (fields.length === 0) {
+        return res.status(422).json({ error: 'No fields to update' });
+    }
+
+    const sql = `
+        UPDATE team
+        SET ${fields.join(', ')}
+        WHERE id = ?;
+    `;
+    params.push(id);
+
+    db.run(sql, params, function (err) {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ error: 'Database error' });
+        }
+        if (this.changes === 0) {
+            return res.status(404).json({ error: 'Team not found' });
+        }
+        res.json({ message: 'Team updated' });
+    });
+});
 module.exports = app;
