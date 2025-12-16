@@ -14,7 +14,7 @@ body {
 }
 
 .my-table th {
-    background-color: #A60D0D; /* Jeopardy Red */
+    background-color: #b50cf2; /* Jeopardy Red */
     color: white;
     font-size: 24px;
     padding: 10px;
@@ -22,8 +22,8 @@ body {
 }
 
 .my-table td {
-    background-color: #FF2700; /* Jeopardy Red */
-    color: #1B821B; /* Green point values */
+    background-color: #620b9c; /* Jeopardy Purple */
+    color: #ababab; /* Grey point values */
     text-align: center;
     vertical-align: middle;
     height: 120px;
@@ -58,7 +58,7 @@ body {
     margin: 15px 0;
     padding: 10px 20px;
     font-size: 1.1rem;
-    background-color: #C44F4F;
+    background-color: #b50cf2;
     color: white;
     border: none;
     border-radius: 6px;
@@ -66,7 +66,7 @@ body {
 }
 
 .reset-button:hover {
-    background-color: #00FF00;
+    background-color: #c75fed;
 }
 
 body {
