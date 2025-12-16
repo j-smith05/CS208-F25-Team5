@@ -129,13 +129,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (pointsDisplay && !pointsDisplay.classList.contains('hidden')) {
                 pointsDisplay.classList.add('hidden');
                 clueContent.classList.remove('hidden');
-                cell.style.backgroundColor = '#A60D0D'; // Active question
+                cell.style.backgroundColor = '#c75fed'; // Active question
             }
 
 // State 2: Showing the question (second click → show answer ONLY)
             else if (clueAnswer && clueAnswer.classList.contains('hidden')) {
                 clueAnswer.classList.remove('hidden');
-                cell.style.backgroundColor = '#127012'; // Answer reveal
+                cell.style.backgroundColor = '#ebcbf7'; // Answer reveal
             }
 
 // State 3: Scoring + mark as used (third click)
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         clueCells.forEach(cell => {
             cell.classList.remove('used');
-            cell.style.backgroundColor = '#FF2700';  // Jeopardy blue
+            cell.style.backgroundColor = '#620b9c';  // Jeopardy purple
 
             const pointsDisplay = cell.querySelector('.clue-points');
             const clueContent = cell.querySelector('.clue-content');
