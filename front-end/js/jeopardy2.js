@@ -1,5 +1,5 @@
 
-console.log('sample.js is executing...');
+console.log('jeopardy2.js is executing...');
 
 let team1Score = 0;
 let team2Score = 0;

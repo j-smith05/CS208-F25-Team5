@@ -1,5 +1,5 @@
 
-console.log('sample.js is executing...');
+console.log('jeopardy3.js is executing...');
 
 let team1Score = 0;
 let team2Score = 0;
@@ -62,7 +62,7 @@ function setTeamNames() {
 // Load clues onto the board
 async function loadCluesOnBoard() {
     try {
-        const response = await fetch("http://localhost:8080/api/jeopardy2");
+        const response = await fetch("http://localhost:8080/api/jeopardy3");
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const allClues = await response.json();
         console.log("Loaded clues:", allClues);
