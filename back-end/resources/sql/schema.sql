@@ -23,6 +23,7 @@ DROP TABLE IF EXISTS science;
 DROP TABLE IF EXISTS the90s;
 DROP TABLE IF EXISTS worldCities;
 DROP TABLE IF EXISTS moviesAndTv;
+DROP TABLE IF EXISTS videoGames;
 
 
 CREATE TABLE team
@@ -153,6 +154,15 @@ CREATE TABLE worldCities
 );
 
 CREATE TABLE moviesAndTv
+(
+    id        INTEGER,
+    questions VARCHAR(100),
+    answers   VARCHAR(100),
+    points    INTEGER
+
+);
+
+CREATE TABLE videoGames
 (
     id        INTEGER,
     questions VARCHAR(100),

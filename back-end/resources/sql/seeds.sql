@@ -208,5 +208,16 @@ FROM
 WHERE
         categories = 'Movies & TV'
 
+INSERT INTO videoGames(id, questions, answers, points)
+SELECT
+    id,
+    questions,
+    answers,
+    points
+FROM
+    jeopardy_2
+WHERE
+        categories = 'Video Games'
+
 INSERT INTO team_answers (team_id, question_id, is_correct)
 VALUES (1, 7, 1);
