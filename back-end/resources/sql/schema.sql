@@ -50,6 +50,15 @@ CREATE TABLE jeopardy_2
     points     INTEGER
 );
 
+CREATE TABLE jeopardy_3
+(
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    categories VARCHAR(20),
+    questions  VARCHAR(100),
+    answers    VARCHAR(100),
+    points     INTEGER
+);
+
 CREATE TABLE disney
 (
     id        INTEGER,

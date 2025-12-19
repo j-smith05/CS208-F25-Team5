@@ -59,6 +59,34 @@ VALUES
     (49, 'World Cities', 'What is the most populous city in the world?', 'Tokyo', 400),
     (50, 'World Cities', 'In which European city would you find the Colosseum?', 'Rome', 500);
 
+INSERT INTO jeopardy_3(id, categories, questions, answers, points)
+VALUES
+    (51, 'Movies & TV', 'In "The Wizard of Oz," what color is the brick road?', 'Yellow', 100),
+    (52, 'Movies & TV', 'What is the name of the kingdom in "Frozen"?', 'Arendelle', 200),
+    (53, 'Movies & TV', 'Who played the character of Jack Sparrow in "Pirates of the Caribbean"?', 'Johnny Depp', 300),
+    (54, 'Movies & TV', 'Which TV show features a chemistry teacher named Walter White?', 'Breaking Bad', 400),
+    (55, 'Movies & TV', 'How many "Star Wars" movies make up the "Skywalker Saga"?', '9', 500),
+    (56, 'History', 'In what year did the Berlin Wall fall?', '1989', 100),
+    (57, 'History', 'Who was the first female pilot to fly solo across the Atlantic?', 'Amelia Earhart', 200),
+    (58, 'History', 'What was the name of the series of programs launched by FDR to end the Depression?', 'The New Deal', 300),
+    (59, 'History', 'Which country gifted the Statue of Liberty to the United States?', 'France', 400),
+    (60, 'History', 'Who was the primary author of the Declaration of Independence?', 'Thomas Jefferson', 500),
+    (61, 'Video Games', 'What is the name of the main protagonist in "The Legend of Zelda"?', 'Link', 100),
+    (62, 'Video Games', 'In "Pac-Man," what is the name of the red ghost?', 'Blinky', 200),
+    (63, 'Video Games', 'Which game features "Creepers" and "Endermen"?', 'Minecraft', 300),
+    (64, 'Video Games', 'What is the best-selling gaming console of all time?', 'PlayStation 2', 400),
+    (65, 'Video Games', 'In "Halo," what is the name of the artificial intelligence that accompanies Master Chief?', 'Cortana', 500),
+    (66, 'Sports', 'How many players are on a baseball team on the field at one time?', '9', 100),
+    (67, 'Sports', 'In what sport would you use a "sand wedge"?', 'Golf', 200),
+    (68, 'Sports', 'Which city hosts the Wimbledon tennis tournament?', 'London', 300),
+    (69, 'Sports', 'What is the distance of a full marathon in miles?', '26.2', 400),
+    (70, 'Sports', 'Which NFL team has the most Super Bowl wins? (Tie between two teams)', 'Steelers or Patriots', 500),
+    (71, 'Music', 'What is the name of the lead singer of U2?', 'Bono', 100),
+    (72, 'Music', 'How many strings are on a violin?', '4', 200),
+    (73, 'Music', 'Which pop star is known as the "Material Girl"?', 'Madonna', 300),
+    (74, 'Music', 'What was the name of the Spice Girls first hit single?', 'Wannabe', 400),
+    (75, 'Music', 'In what year did the Woodstock Festival take place?', '1969', 500);
+
 INSERT INTO disney(id, questions, answers, points)
     SELECT
         id,
