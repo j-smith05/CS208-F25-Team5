@@ -24,6 +24,7 @@ DROP TABLE IF EXISTS the90s;
 DROP TABLE IF EXISTS worldCities;
 DROP TABLE IF EXISTS moviesAndTv;
 DROP TABLE IF EXISTS videoGames;
+DROP TABLE IF EXISTS history;
 
 
 CREATE TABLE team
@@ -163,6 +164,15 @@ CREATE TABLE moviesAndTv
 );
 
 CREATE TABLE videoGames
+(
+    id        INTEGER,
+    questions VARCHAR(100),
+    answers   VARCHAR(100),
+    points    INTEGER
+
+);
+
+CREATE TABLE history
 (
     id        INTEGER,
     questions VARCHAR(100),
