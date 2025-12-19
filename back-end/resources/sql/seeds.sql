@@ -204,7 +204,7 @@ SELECT
     answers,
     points
 FROM
-    jeopardy_2
+    jeopardy_3
 WHERE
         categories = 'Movies & TV'
 
@@ -215,7 +215,7 @@ SELECT
     answers,
     points
 FROM
-    jeopardy_2
+    jeopardy_3
 WHERE
         categories = 'Video Games'
 
