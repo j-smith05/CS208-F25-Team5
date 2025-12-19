@@ -230,5 +230,16 @@ FROM
 WHERE
         categories = 'History'
 
+INSERT INTO sports(id, questions, answers, points)
+SELECT
+    id,
+    questions,
+    answers,
+    points
+FROM
+    jeopardy_3
+WHERE
+        categories = 'Sports'
+
 INSERT INTO team_answers (team_id, question_id, is_correct)
 VALUES (1, 7, 1);
