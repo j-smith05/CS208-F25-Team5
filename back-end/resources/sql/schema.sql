@@ -6,6 +6,7 @@
 
 DROP TABLE IF EXISTS jeopardy;
 DROP TABLE IF EXISTS jeopardy_2;
+DROP TABLE IF EXISTS jeopardy_3;
 DROP TABLE IF EXISTS disney;
 DROP TABLE IF EXISTS literature;
 DROP TABLE IF EXISTS team;
@@ -38,6 +39,7 @@ CREATE TABLE jeopardy
     questions  VARCHAR(100),
     answers    VARCHAR(100),
     points     INTEGER
+
 
 );
 
