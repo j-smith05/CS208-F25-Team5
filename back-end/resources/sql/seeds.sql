@@ -197,5 +197,16 @@ FROM
 WHERE
         categories = 'World Cities';
 
+INSERT INTO moviesAndTv(id, questions, answers, points)
+SELECT
+    id,
+    questions,
+    answers,
+    points
+FROM
+    jeopardy_2
+WHERE
+        categories = 'Movies & TV'
+
 INSERT INTO team_answers (team_id, question_id, is_correct)
 VALUES (1, 7, 1);

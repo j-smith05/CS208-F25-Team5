@@ -22,6 +22,7 @@ DROP TABLE IF EXISTS random;
 DROP TABLE IF EXISTS science;
 DROP TABLE IF EXISTS the90s;
 DROP TABLE IF EXISTS worldCities;
+DROP TABLE IF EXISTS moviesAndTv;
 
 
 CREATE TABLE team
@@ -143,6 +144,15 @@ CREATE TABLE science
 );
 
 CREATE TABLE worldCities
+(
+    id        INTEGER,
+    questions VARCHAR(100),
+    answers   VARCHAR(100),
+    points    INTEGER
+
+);
+
+CREATE TABLE moviesAndTv
 (
     id        INTEGER,
     questions VARCHAR(100),
