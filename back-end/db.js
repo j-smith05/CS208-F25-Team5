@@ -1,4 +1,3 @@
-const util = require("util");
 const fs = require("fs");
 const sqlite3 = require('sqlite3').verbose();
 
@@ -67,55 +66,6 @@ else
     });
 }
 
-
-function getAllSamples()
-{
-    return new Promise(function(resolve, reject)
-    {
-        db.serialize(function()
-        {
-            // note the backticks ` which allow us to write a multiline string
-            const sql =
-                `SELECT id, tbd 
-                 FROM samples;`;
-
-            let listOfSamples = []; // initialize an empty array
-
-            // print table header
-            printTableHeader(["id", "tbd"]);
-
-            const callbackToProcessEachRow = function(err, row)
-            {
-                if (err)
-                {
-                    reject(err);
-                }
-
-                // extract the values from the current row
-                const id = row.id;
-                const tbd = row.tbd;
-
-                // print the results of the current row
-                console.log(util.format("| %d | %s |", id, tbd));
-
-                const sampleForCurrentRow = {
-                    id: id,
-                    tbd: tbd
-                };
-
-                // add a new element sampleForCurrentRow to the array
-                listOfSamples.push(sampleForCurrentRow);
-            };
-
-            const callbackAfterAllRowsAreProcessed = function()
-            {
-                resolve(listOfSamples);
-            };
-
-            db.each(sql, callbackToProcessEachRow, callbackAfterAllRowsAreProcessed);
-        });
-    });
-}
 
 //I added getPoints, getQuestions, getAnswers and getCategories but my original commit didn't get that so I'm commiting here
 function getQuestionData(questionID, fieldName)
@@ -247,28 +197,47 @@ function getAllJeopardy2Questions() {
     });
 }
 
+function getAllJeopardy3Questions() {
+    return new Promise(function(resolve, reject) {
+        db.serialize(function() {
 
+            const sql = `
+                SELECT id, categories, questions, answers, points
+                FROM jeopardy_3
+                ORDER BY categories, points;
+            `;
 
-function printTableHeader(listOfColumnNames)
-{
-    let buffer = "| ";
-    for (const columnName of listOfColumnNames)
-    {
-        buffer += columnName + " | ";
-    }
-    console.log(buffer);
-    console.log("-".repeat(80));
+            const list = [];
+
+            db.each(
+                sql,
+                function(err, row) {
+                    if (err) return reject(err);
+
+                    list.push({
+                        id: row.id,
+                        category: row.categories,
+                        question: row.questions,
+                        answer: row.answers,
+                        points: row.points
+                    });
+                },
+                function() {
+                    resolve(list);
+                }
+            );
+        });
+    });
 }
-
-
 
 
 // TODO: export the functions that will be used in other files
 // these functions will be available from other files that import this module
 module.exports = {
-    getAllSamples,
+    connection: db,
     getQuestionData,
     getAllJeopardyQuestions,
     getQuestionData2,
-    getAllJeopardy2Questions
+    getAllJeopardy2Questions,
+    getAllJeopardy3Questions
 };

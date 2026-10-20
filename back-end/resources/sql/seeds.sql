@@ -206,7 +206,7 @@ SELECT
 FROM
     jeopardy_3
 WHERE
-        categories = 'Movies & TV'
+        categories = 'Movies & TV';
 
 INSERT INTO videoGames(id, questions, answers, points)
 SELECT
@@ -217,7 +217,7 @@ SELECT
 FROM
     jeopardy_3
 WHERE
-        categories = 'Video Games'
+        categories = 'Video Games';
 
 INSERT INTO history(id, questions, answers, points)
 SELECT
@@ -228,7 +228,7 @@ SELECT
 FROM
     jeopardy_3
 WHERE
-        categories = 'History'
+        categories = 'History';
 
 INSERT INTO sports(id, questions, answers, points)
 SELECT
@@ -239,7 +239,10 @@ SELECT
 FROM
     jeopardy_3
 WHERE
-        categories = 'Sports'
+        categories = 'Sports';
+
+INSERT INTO team (id, firstName, lastName, teamName)
+VALUES (1, 'Jacob', 'Smith', 'Team Alex Trebek');
 
 INSERT INTO team_answers (team_id, question_id, is_correct)
 VALUES (1, 7, 1);

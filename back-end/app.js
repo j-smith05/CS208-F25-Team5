@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const bodyParser = require('body-parser');
 const cors = require("cors");
 const path = require('path');
+const db = require('./db').connection;
 const app = express();
 
 // Shows HTTP requests in the console
@@ -34,15 +35,17 @@ app.use('/', require('./routes/sample'));
 // TODO: add new routes here
 
 app.get('/team', function (req, res) {
-    const sql = '' +
-        'SELECT id, firstName, lastName, teamName' +
-        'FROM team' +
-        'ORDER BY id';
+    const sql = `
+        SELECT id, firstName, lastName, teamName
+        FROM team
+        ORDER BY id;
+    `;
     db.all(sql, [], (err, rows) => {
         if (err) {
             console.error(err);
             return res.status(500).json({error: 'Database Error'});
         }
+        res.json(rows);
     });
 });
 

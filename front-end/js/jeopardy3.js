@@ -62,7 +62,7 @@ function setTeamNames() {
 // Load clues onto the board
 async function loadCluesOnBoard() {
     try {
-        const response = await fetch("http://localhost:8080/api/jeopardy3");
+        const response = await fetch("http://localhost:8080/api/jeopardy_3");
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const allClues = await response.json();
         console.log("Loaded clues:", allClues);
