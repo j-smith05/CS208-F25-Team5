@@ -4,8 +4,12 @@ Absolutely, the team can create as many .css files as needed.
 */
 
 body {
-    font: normal 30px Verdana, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Arial, sans-serif;
+    background-color: #f2f4f8;
 }
+
 /* Basic table styling to look like a game board */
 .my-table {
     width: 100%;
@@ -69,54 +73,6 @@ body {
     background-color: #005FCC;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f2f4f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    background-color: white;
-    padding: 40px 60px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    margin-bottom: 30px;
-}
-
-.game-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.game-list li {
-    margin: 15px 0;
-}
-
-.game-list a {
-    display: inline-block;
-    width: 220px;
-    padding: 12px;
-    text-decoration: none;
-    background-color: #0047ab;
-    color: white;
-    border-radius: 6px;
-    font-size: 18px;
-}
-
-.game-list a:hover {
-    background-color: #003080;
-}
-
 .team-setup {
     margin: 20px 0;
     padding: 15px;
@@ -131,3 +87,15 @@ h1 {
     font-size: 24px;
 }
 
+.timer-box {
+    font-size: 36px;
+    font-weight: bold;
+    color: yellow;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 10px 20px;
+    border-radius: 8px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+}
